@@ -7,10 +7,8 @@
 
 import Foundation
 
-// This is a class to support future CoreData implementation
-
 /// A workout represented by a unique title.
-final class SetWorkoutModel {
+struct SetWorkoutModel {
     // MARK: - Properties
     /// The title of the workout.
     var title: String
