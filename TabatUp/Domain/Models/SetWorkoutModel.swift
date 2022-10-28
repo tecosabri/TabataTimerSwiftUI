@@ -6,25 +6,26 @@
 //
 
 import Foundation
-import Combine
+
+// This is a class to support future CoreData implementation
 
 /// A workout represented by a unique title.
-final class SetWorkoutModel: ObservableObject {
+final class SetWorkoutModel {
     // MARK: - Properties
     /// The title of the workout.
-    @Published var title: String
+    var title: String
     /// The time to prepare before the whole workout starts.
-    @Published var prepareTime: Int
+    var prepareTime: Int
     /// The round workout time.
-    @Published var workTime: Int
+    var workTime: Int
     /// The rest time between cycles.
-    @Published var restBetweenCycles: Int
+    var restBetweenCycles: Int
     /// The number of cycles in each set.
-    @Published var cycles: Int
+    var cycles: Int
     /// The number of sets in the workout.
-    @Published var sets: Int
+    var sets: Int
     /// The rest time between sets.
-    @Published var restBetweenSets: Int
+    var restBetweenSets: Int
     
     // MARK: - Lifecycle
     init(title: String = "",

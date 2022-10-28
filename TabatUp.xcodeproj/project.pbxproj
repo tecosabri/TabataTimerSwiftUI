@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		8742F06C290BB91B00EA5BF4 /* SetWorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742F06B290BB91B00EA5BF4 /* SetWorkoutModel.swift */; };
 		8742F070290BBB4300EA5BF4 /* SetWorkoutModel+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742F06F290BBB4300EA5BF4 /* SetWorkoutModel+Fixture.swift */; };
-		8742F079290BBFAB00EA5BF4 /* SetWorkoutModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742F078290BBFAB00EA5BF4 /* SetWorkoutModelTests.swift */; };
 		876E1F9F290A7D0E00041F19 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876E1F9E290A7D0E00041F19 /* RootView.swift */; };
 		876E1FA1290A7D2900041F19 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876E1FA0290A7D2900041F19 /* RootViewModel.swift */; };
 		876E1FA3290A7DA500041F19 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876E1FA2290A7DA500041F19 /* Status.swift */; };
 		876EAA362906B88D006B567B /* TabatUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876EAA352906B88D006B567B /* TabatUpApp.swift */; };
 		876EAA3A2906B88E006B567B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 876EAA392906B88E006B567B /* Assets.xcassets */; };
+		876EAA4C2906B88E006B567B /* TabatUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876EAA4B2906B88E006B567B /* TabatUpTests.swift */; };
 		876EAA562906B88E006B567B /* TabatUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876EAA552906B88E006B567B /* TabatUpUITests.swift */; };
 		876EAA582906B88E006B567B /* TabatUpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876EAA572906B88E006B567B /* TabatUpUITestsLaunchTests.swift */; };
 		876EAA6F2906FF31006B567B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876EAA6E2906FF31006B567B /* HomeView.swift */; };
@@ -46,7 +46,6 @@
 /* Begin PBXFileReference section */
 		8742F06B290BB91B00EA5BF4 /* SetWorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutModel.swift; sourceTree = "<group>"; };
 		8742F06F290BBB4300EA5BF4 /* SetWorkoutModel+Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SetWorkoutModel+Fixture.swift"; sourceTree = "<group>"; };
-		8742F078290BBFAB00EA5BF4 /* SetWorkoutModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutModelTests.swift; sourceTree = "<group>"; };
 		876E1F9E290A7D0E00041F19 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		876E1FA0290A7D2900041F19 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		876E1FA2290A7DA500041F19 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
@@ -54,6 +53,7 @@
 		876EAA352906B88D006B567B /* TabatUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabatUpApp.swift; sourceTree = "<group>"; };
 		876EAA392906B88E006B567B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		876EAA472906B88E006B567B /* TabatUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabatUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		876EAA4B2906B88E006B567B /* TabatUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabatUpTests.swift; sourceTree = "<group>"; };
 		876EAA512906B88E006B567B /* TabatUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabatUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		876EAA552906B88E006B567B /* TabatUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabatUpUITests.swift; sourceTree = "<group>"; };
 		876EAA572906B88E006B567B /* TabatUpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabatUpUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -105,45 +105,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		8742F071290BBF7000EA5BF4 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				8742F073290BBF7D00EA5BF4 /* ViewModels */,
-				8742F072290BBF7400EA5BF4 /* Views */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		8742F072290BBF7400EA5BF4 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		8742F073290BBF7D00EA5BF4 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		8742F074290BBF8200EA5BF4 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				8742F075290BBF8800EA5BF4 /* Models */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		8742F075290BBF8800EA5BF4 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				8742F078290BBFAB00EA5BF4 /* SetWorkoutModelTests.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		876EAA292906B88D006B567B = {
 			isa = PBXGroup;
 			children = (
@@ -177,9 +138,8 @@
 		876EAA4A2906B88E006B567B /* TabatUpTests */ = {
 			isa = PBXGroup;
 			children = (
-				8742F074290BBF8200EA5BF4 /* Domain */,
-				8742F071290BBF7000EA5BF4 /* UI */,
 				8742F06D290BBB1500EA5BF4 /* TestingHelpers */,
+				876EAA4B2906B88E006B567B /* TabatUpTests.swift */,
 			);
 			path = TabatUpTests;
 			sourceTree = "<group>";
@@ -421,8 +381,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8742F079290BBFAB00EA5BF4 /* SetWorkoutModelTests.swift in Sources */,
 				8742F070290BBB4300EA5BF4 /* SetWorkoutModel+Fixture.swift in Sources */,
+				876EAA4C2906B88E006B567B /* TabatUpTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
