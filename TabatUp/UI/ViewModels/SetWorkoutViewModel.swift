@@ -14,26 +14,26 @@ final class SetWorkoutViewModel: ObservableObject {
     /// The title of the workout.
     @Published var title: String
     /// The time to prepare before the whole workout starts.
-    @Published var prepareTime: Int
+    @Published var prepareTime: String
     /// The round workout time.
-    @Published var workTime: Int
+    @Published var workTime: String
     /// The rest time between cycles.
-    @Published var restBetweenCycles: Int
+    @Published var restBetweenCycles: String
     /// The number of cycles in each set.
-    @Published var cycles: Int
+    @Published var cycles: String
     /// The number of sets in the workout.
-    @Published var sets: Int
+    @Published var sets: String
     /// The rest time between sets.
-    @Published var restBetweenSets: Int
+    @Published var restBetweenSets: String
     
     // MARK: - Lifecycle
     init(withWorkoutModel workout: SetWorkoutModel) {
         self.title = workout.title
-        self.prepareTime = workout.prepareTime
-        self.workTime = workout.workTime
-        self.restBetweenCycles = workout.restBetweenCycles
-        self.cycles = workout.cycles
-        self.sets = workout.sets
-        self.restBetweenSets = workout.restBetweenSets
+        self.prepareTime = String(workout.prepareTime)
+        self.workTime = String(workout.workTime)
+        self.restBetweenCycles = String(workout.restBetweenCycles)
+        self.cycles = String(workout.cycles)
+        self.sets = String(workout.sets)
+        self.restBetweenSets = String(workout.restBetweenSets)
     }
 }
