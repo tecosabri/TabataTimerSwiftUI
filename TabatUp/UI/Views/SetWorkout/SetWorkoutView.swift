@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct SetWorkoutView: View {
+    
+    @StateObject var setWorkoutViewModel: SetWorkoutViewModel
+    
     var body: some View {
         Text("SetWorkout view")
     }
@@ -15,6 +18,6 @@ struct SetWorkoutView: View {
 
 struct SetWorkoutView_Previews: PreviewProvider {
     static var previews: some View {
-        SetWorkoutView()
+        SetWorkoutView(setWorkoutViewModel: SetWorkoutViewModel(withWorkoutModel: SetWorkoutModel()))
     }
 }

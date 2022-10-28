@@ -14,7 +14,7 @@ struct HomeView: View {
                 .tabItem {
                     Label("Timer", systemImage: "clock")
                 }
-            SetWorkoutView()
+            SetWorkoutView(setWorkoutViewModel: SetWorkoutViewModel(withWorkoutModel: SetWorkoutModel()))
                 .tabItem {
                     Label("Set workout", systemImage: "dumbbell")
                 }

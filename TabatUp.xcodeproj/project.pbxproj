@@ -10,6 +10,8 @@
 		8742F06C290BB91B00EA5BF4 /* SetWorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742F06B290BB91B00EA5BF4 /* SetWorkoutModel.swift */; };
 		8742F070290BBB4300EA5BF4 /* SetWorkoutModel+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742F06F290BBB4300EA5BF4 /* SetWorkoutModel+Fixture.swift */; };
 		8742F07D290BC88B00EA5BF4 /* SetWorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742F07C290BC88B00EA5BF4 /* SetWorkoutViewModel.swift */; };
+		8742F07E290BCA5600EA5BF4 /* SetWorkoutModel+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742F06F290BBB4300EA5BF4 /* SetWorkoutModel+Fixture.swift */; };
+		8742F084290BD27900EA5BF4 /* SetWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878D32F2290BB1800073D5A7 /* SetWorkoutView.swift */; };
 		876E1F9F290A7D0E00041F19 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876E1F9E290A7D0E00041F19 /* RootView.swift */; };
 		876E1FA1290A7D2900041F19 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876E1FA0290A7D2900041F19 /* RootViewModel.swift */; };
 		876E1FA3290A7DA500041F19 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876E1FA2290A7DA500041F19 /* Status.swift */; };
@@ -22,7 +24,6 @@
 		876EAA712906FF83006B567B /* DevelopmentAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 876EAA702906FF83006B567B /* DevelopmentAssets.xcassets */; };
 		876EAA722906FF83006B567B /* DevelopmentAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 876EAA702906FF83006B567B /* DevelopmentAssets.xcassets */; };
 		876EAA732906FF83006B567B /* DevelopmentAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 876EAA702906FF83006B567B /* DevelopmentAssets.xcassets */; };
-		878D32F3290BB1800073D5A7 /* SetWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878D32F2290BB1800073D5A7 /* SetWorkoutView.swift */; };
 		878D32F5290BB18E0073D5A7 /* LoadWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878D32F4290BB18E0073D5A7 /* LoadWorkoutView.swift */; };
 		878D32F7290BB1970073D5A7 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878D32F6290BB1970073D5A7 /* TimerView.swift */; };
 /* End PBXBuildFile section */
@@ -105,6 +106,40 @@
 				8742F06F290BBB4300EA5BF4 /* SetWorkoutModel+Fixture.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8742F080290BD1E900EA5BF4 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				876EAA6E2906FF31006B567B /* HomeView.swift */,
+				876E1F9E290A7D0E00041F19 /* RootView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		8742F081290BD1F600EA5BF4 /* SetWorkout */ = {
+			isa = PBXGroup;
+			children = (
+				8742F088290BD2DB00EA5BF4 /* LoadWorkout */,
+				878D32F2290BB1800073D5A7 /* SetWorkoutView.swift */,
+			);
+			path = SetWorkout;
+			sourceTree = "<group>";
+		};
+		8742F087290BD2D400EA5BF4 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				878D32F6290BB1970073D5A7 /* TimerView.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		8742F088290BD2DB00EA5BF4 /* LoadWorkout */ = {
+			isa = PBXGroup;
+			children = (
+				878D32F4290BB18E0073D5A7 /* LoadWorkoutView.swift */,
+			);
+			path = LoadWorkout;
 			sourceTree = "<group>";
 		};
 		876EAA292906B88D006B567B = {
@@ -227,11 +262,9 @@
 		876EAA6D2906FF1A006B567B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				876E1F9E290A7D0E00041F19 /* RootView.swift */,
-				876EAA6E2906FF31006B567B /* HomeView.swift */,
-				878D32F6290BB1970073D5A7 /* TimerView.swift */,
-				878D32F2290BB1800073D5A7 /* SetWorkoutView.swift */,
-				878D32F4290BB18E0073D5A7 /* LoadWorkoutView.swift */,
+				8742F087290BD2D400EA5BF4 /* Timer */,
+				8742F080290BD1E900EA5BF4 /* Navigation */,
+				8742F081290BD1F600EA5BF4 /* SetWorkout */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -370,14 +403,15 @@
 			files = (
 				876EAA362906B88D006B567B /* TabatUpApp.swift in Sources */,
 				8742F06C290BB91B00EA5BF4 /* SetWorkoutModel.swift in Sources */,
+				8742F07E290BCA5600EA5BF4 /* SetWorkoutModel+Fixture.swift in Sources */,
 				878D32F5290BB18E0073D5A7 /* LoadWorkoutView.swift in Sources */,
-				878D32F3290BB1800073D5A7 /* SetWorkoutView.swift in Sources */,
 				876E1FA3290A7DA500041F19 /* Status.swift in Sources */,
 				876EAA6F2906FF31006B567B /* HomeView.swift in Sources */,
 				876E1FA1290A7D2900041F19 /* RootViewModel.swift in Sources */,
 				878D32F7290BB1970073D5A7 /* TimerView.swift in Sources */,
 				876E1F9F290A7D0E00041F19 /* RootView.swift in Sources */,
 				8742F07D290BC88B00EA5BF4 /* SetWorkoutViewModel.swift in Sources */,
+				8742F084290BD27900EA5BF4 /* SetWorkoutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
