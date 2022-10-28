@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8742F06C290BB91B00EA5BF4 /* SetWorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742F06B290BB91B00EA5BF4 /* SetWorkoutModel.swift */; };
+		8742F070290BBB4300EA5BF4 /* SetWorkoutModel+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742F06F290BBB4300EA5BF4 /* SetWorkoutModel+Fixture.swift */; };
 		876E1F9F290A7D0E00041F19 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876E1F9E290A7D0E00041F19 /* RootView.swift */; };
 		876E1FA1290A7D2900041F19 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876E1FA0290A7D2900041F19 /* RootViewModel.swift */; };
 		876E1FA3290A7DA500041F19 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876E1FA2290A7DA500041F19 /* Status.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		8742F06B290BB91B00EA5BF4 /* SetWorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutModel.swift; sourceTree = "<group>"; };
+		8742F06F290BBB4300EA5BF4 /* SetWorkoutModel+Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SetWorkoutModel+Fixture.swift"; sourceTree = "<group>"; };
 		876E1F9E290A7D0E00041F19 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		876E1FA0290A7D2900041F19 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		876E1FA2290A7DA500041F19 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
@@ -87,6 +89,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8742F06D290BBB1500EA5BF4 /* TestingHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				8742F06E290BBB2300EA5BF4 /* Extensions */,
+			);
+			path = TestingHelpers;
+			sourceTree = "<group>";
+		};
+		8742F06E290BBB2300EA5BF4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8742F06F290BBB4300EA5BF4 /* SetWorkoutModel+Fixture.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		876EAA292906B88D006B567B = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +138,7 @@
 		876EAA4A2906B88E006B567B /* TabatUpTests */ = {
 			isa = PBXGroup;
 			children = (
+				8742F06D290BBB1500EA5BF4 /* TestingHelpers */,
 				876EAA4B2906B88E006B567B /* TabatUpTests.swift */,
 			);
 			path = TabatUpTests;
@@ -362,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8742F070290BBB4300EA5BF4 /* SetWorkoutModel+Fixture.swift in Sources */,
 				876EAA4C2906B88E006B567B /* TabatUpTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
