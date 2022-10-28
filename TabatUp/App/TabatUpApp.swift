@@ -9,12 +9,13 @@ import SwiftUI
 
 @main
 struct TabatUpApp: App {
-    let persistenceController = PersistenceController.shared
-
+    
+    @StateObject var rootViewModel = RootViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            RootView()
+                .environmentObject(rootViewModel)
         }
     }
 }
