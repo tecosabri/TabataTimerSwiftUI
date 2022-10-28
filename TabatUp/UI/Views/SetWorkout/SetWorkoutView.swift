@@ -12,7 +12,7 @@ struct SetWorkoutView: View {
     @StateObject var setWorkoutViewModel: SetWorkoutViewModel
     
     var body: some View {
-        Text("SetWorkout view")
+        SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .restBetweenCycles, fromSetWorkoutViewModel: setWorkoutViewModel))
     }
 }
 

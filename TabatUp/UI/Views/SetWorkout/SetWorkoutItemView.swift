@@ -24,6 +24,7 @@ struct SetWorkoutItemView: View {
         }
         .padding()
         .overlay(Circle().stroke(lineWidth: 2))
+        .frame(width: 60.0, height: 60.0)
     }
 }
 
