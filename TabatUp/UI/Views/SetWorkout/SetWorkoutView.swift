@@ -12,12 +12,15 @@ struct SetWorkoutView: View {
     @StateObject var setWorkoutViewModel: SetWorkoutViewModel
     
     var body: some View {
-        SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .restBetweenCycles, fromSetWorkoutViewModel: setWorkoutViewModel))
+        VStack {
+           WorkoutView(setWorkoutViewModel: setWorkoutViewModel)
+        }
+
     }
 }
 
 struct SetWorkoutView_Previews: PreviewProvider {
     static var previews: some View {
-        SetWorkoutView(setWorkoutViewModel: SetWorkoutViewModel(withWorkoutModel: SetWorkoutModel()))
+        SetWorkoutView(setWorkoutViewModel: PreviewWorkoutViewModels.defaultWorkout())
     }
 }

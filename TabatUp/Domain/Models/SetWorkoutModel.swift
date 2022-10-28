@@ -11,7 +11,7 @@ import Foundation
 struct SetWorkoutModel {
     // MARK: - Properties
     /// The title of the workout: an empty string by default.
-    var title: String = ""
+    var title: String = "Default"
     /// The time to prepare before the whole workout starts: 10 seconds by default.
     var prepareTime: Int = 10
     /// The round workout time: 30 seconds by default.

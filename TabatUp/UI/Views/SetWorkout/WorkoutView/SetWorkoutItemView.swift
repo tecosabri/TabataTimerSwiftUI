@@ -10,6 +10,7 @@ import SwiftUI
 struct SetWorkoutItemView: View {
     
     let setWorkoutItem: SetWorkoutItemViewModel
+    let size = 80.0
     
     var body: some View {
         VStack {
@@ -23,8 +24,12 @@ struct SetWorkoutItemView: View {
                 .bold()
         }
         .padding()
-        .overlay(Circle().stroke(lineWidth: 2))
-        .frame(width: 60.0, height: 60.0)
+        .overlay(
+            Circle()
+                .stroke(lineWidth: 2)
+                .frame(width: size, height: size)
+        )
+        .frame(width: size, height: size)
     }
 }
 
