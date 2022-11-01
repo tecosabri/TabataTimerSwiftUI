@@ -9,7 +9,7 @@ import Foundation
 
 
 /// A property of a workout.
-enum SetWorkoutOption: String, CaseIterable {
+enum SetWorkoutOption: String, CaseIterable {    
     case title = "Title"
     case prepareTime = "Warm up"
     case workTime = "Work time"

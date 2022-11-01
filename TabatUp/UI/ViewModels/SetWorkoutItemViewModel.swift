@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class SetWorkoutItemViewModel {
+final class SetWorkoutItemViewModel: Identifiable {
     
     // MARK: - Properties
     var itemValue: String
