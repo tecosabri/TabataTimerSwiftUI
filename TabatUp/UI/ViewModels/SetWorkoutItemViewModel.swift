@@ -7,12 +7,25 @@
 
 import Foundation
 
-final class SetWorkoutItemViewModel: Identifiable {
+final class SetWorkoutItemViewModel: Identifiable, ObservableObject {
     
     // MARK: - Properties
-    var itemValue: String
+    /// The value of the item.
+    @Published var itemValue: String {
+        didSet {
+            isSet = true
+        }
+    }
+    /// The option to be set for workout.
     let option: SetWorkoutOption
+    /// Determines if a workout item value has been set
+    var isSet: Bool = false
     
+    // MARK: - Lifecycle
+    /// Creates a set workout item view model from the view model for the setting option passed as parameter.
+    /// - Parameters:
+    ///   - option: The option to set.
+    ///   - viewModel: The view model that integrates all the setting options.
     init(workoutOption option: SetWorkoutOption, fromSetWorkoutViewModel viewModel: SetWorkoutViewModel) {
         self.option = option
         switch option {

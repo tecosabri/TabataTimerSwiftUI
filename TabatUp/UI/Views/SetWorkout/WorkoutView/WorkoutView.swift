@@ -17,10 +17,10 @@ struct WorkoutView: View {
                 .bold()
                 .font(.title)
             ZStack {
-                // Get the setworkoutmodel
-                let setWorkoutViewModel = PreviewWorkoutViewModels.defaultWorkout()
                 // Set the title on the center
                 Text(setWorkoutViewModel.title)
+                    .bold()
+                    .font(.title2)
                 // Set a circular layout around the title
                 CircularLayoutView(setWorkoutViewModel: setWorkoutViewModel) {
                     // Prepare time
@@ -37,26 +37,6 @@ struct WorkoutView: View {
                     SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .cycles, fromSetWorkoutViewModel: setWorkoutViewModel))
                 }
             }
-            Divider()
-            Text(setWorkoutViewModel.title)
-            Divider()
-            ScrollView(.horizontal) {
-                HStack (spacing: 20){
-                    SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .prepareTime, fromSetWorkoutViewModel: setWorkoutViewModel))
-                    
-                    SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .sets, fromSetWorkoutViewModel: setWorkoutViewModel))
-                    
-                    SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .restBetweenSets, fromSetWorkoutViewModel: setWorkoutViewModel))
-                    
-                    SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .cycles, fromSetWorkoutViewModel: setWorkoutViewModel))
-                    
-                    SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .restBetweenCycles, fromSetWorkoutViewModel: setWorkoutViewModel))
-                    
-                    SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .workTime, fromSetWorkoutViewModel: setWorkoutViewModel))
-                }
-                .frame(height: 90)
-            }
-            Divider()
         }
     }
 }

@@ -33,7 +33,6 @@
 		876EAA732906FF83006B567B /* DevelopmentAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 876EAA702906FF83006B567B /* DevelopmentAssets.xcassets */; };
 		878D32F5290BB18E0073D5A7 /* LoadWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878D32F4290BB18E0073D5A7 /* LoadWorkoutView.swift */; };
 		878D32F7290BB1970073D5A7 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878D32F6290BB1970073D5A7 /* TimerView.swift */; };
-		87C24A202911751500722167 /* ColumnsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C24A1F2911751500722167 /* ColumnsLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +79,6 @@
 		878D32F2290BB1800073D5A7 /* SetWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutView.swift; sourceTree = "<group>"; };
 		878D32F4290BB18E0073D5A7 /* LoadWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadWorkoutView.swift; sourceTree = "<group>"; };
 		878D32F6290BB1970073D5A7 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
-		87C24A1F2911751500722167 /* ColumnsLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnsLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +167,6 @@
 		8742F095290BE54200EA5BF4 /* WorkoutView */ = {
 			isa = PBXGroup;
 			children = (
-				87C24A1F2911751500722167 /* ColumnsLayout.swift */,
 				8742F089290BD41E00EA5BF4 /* SetWorkoutItemView.swift */,
 				8742F093290BE53F00EA5BF4 /* WorkoutView.swift */,
 				874DE29229103C4100940912 /* CircularLayoutView.swift */,
@@ -458,7 +455,6 @@
 				878D32F7290BB1970073D5A7 /* TimerView.swift in Sources */,
 				876E1F9F290A7D0E00041F19 /* RootView.swift in Sources */,
 				8742F07D290BC88B00EA5BF4 /* SetWorkoutViewModel.swift in Sources */,
-				87C24A202911751500722167 /* ColumnsLayout.swift in Sources */,
 				8742F084290BD27900EA5BF4 /* SetWorkoutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,27 +9,45 @@ import SwiftUI
 
 struct SetWorkoutItemView: View {
     
-    let setWorkoutItem: SetWorkoutItemViewModel
+    @ObservedObject var setWorkoutItem: SetWorkoutItemViewModel
     let size = 80.0
     
     var body: some View {
-        VStack {
-            Text(setWorkoutItem.option.rawValue)
-                .font(.caption2)
-                .bold()
-                .fixedSize()
+        ZStack {
+            // Circle to be coloured if the setworkout item value is modified
+            if setWorkoutItem.isSet {
+                Circle()
+                    .fill(.red)
+                    .frame(width: size, height: size)
+                    .zIndex(0)
+            }
+            // Info of the setworkout item and stroke of the circle
+            VStack {
+                Text(setWorkoutItem.option.rawValue)
+                    .font(.caption2)
+                    .bold()
+                    .fixedSize()
                 
-            Spacer()
-            Text(setWorkoutItem.itemValue)
-                .bold()
+                Spacer()
+                Text(setWorkoutItem.itemValue)
+                    .bold()
+            }
+            .padding()
+            .overlay(
+                Circle()
+                    .stroke(lineWidth: 2)
+                    .frame(width: size, height: size)
+            )
+            .frame(width: size, height: size)
+            .zIndex(1)
         }
-        .padding()
-        .overlay(
-            Circle()
-                .stroke(lineWidth: 2)
-                .frame(width: size, height: size)
-        )
-        .frame(width: size, height: size)
+        .onTapGesture {
+            if setWorkoutItem.option == .cycles {
+                setWorkoutItem.itemValue = "100"
+            } else {
+                setWorkoutItem.itemValue = "12"
+            }
+        }
     }
 }
 
