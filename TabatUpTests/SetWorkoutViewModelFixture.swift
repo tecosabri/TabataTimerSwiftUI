@@ -1,11 +1,12 @@
 //
-//  SetWorkoutModel+Fixture.swift
+//  SetWorkoutViewModelFixture.swift
 //  TabatUpTests
 //
-//  Created by Ismael Sabri Pérez on 28/10/22.
+//  Created by Ismael Sabri Pérez on 2/11/22.
 //
 
 import Foundation
+@testable import TabatUp
 
 extension SetWorkoutViewModel {
     
@@ -28,6 +29,7 @@ extension SetWorkoutViewModel {
                         restBetweenSets: Int = 0) -> SetWorkoutViewModel {
         return SetWorkoutViewModel(withWorkoutModel: SetWorkoutModel(
             title: title,
+            prepareTime: prepareTime,
             workTime: workTime,
             restBetweenCycles: restBetweenCycles,
             cycles: cycles,

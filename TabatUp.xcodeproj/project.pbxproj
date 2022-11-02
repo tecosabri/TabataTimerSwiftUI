@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8742F06C290BB91B00EA5BF4 /* SetWorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742F06B290BB91B00EA5BF4 /* SetWorkoutModel.swift */; };
-		8742F070290BBB4300EA5BF4 /* SetWorkoutModel+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742F06F290BBB4300EA5BF4 /* SetWorkoutModel+Fixture.swift */; };
 		8742F07D290BC88B00EA5BF4 /* SetWorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742F07C290BC88B00EA5BF4 /* SetWorkoutViewModel.swift */; };
-		8742F07E290BCA5600EA5BF4 /* SetWorkoutModel+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742F06F290BBB4300EA5BF4 /* SetWorkoutModel+Fixture.swift */; };
 		8742F084290BD27900EA5BF4 /* SetWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878D32F2290BB1800073D5A7 /* SetWorkoutView.swift */; };
 		8742F08A290BD41E00EA5BF4 /* SetWorkoutItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742F089290BD41E00EA5BF4 /* SetWorkoutItemView.swift */; };
 		8742F08C290BD6B400EA5BF4 /* SetWorkoutOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742F08B290BD6B400EA5BF4 /* SetWorkoutOption.swift */; };
@@ -24,26 +22,18 @@
 		876E1FA3290A7DA500041F19 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876E1FA2290A7DA500041F19 /* Status.swift */; };
 		876EAA362906B88D006B567B /* TabatUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876EAA352906B88D006B567B /* TabatUpApp.swift */; };
 		876EAA3A2906B88E006B567B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 876EAA392906B88E006B567B /* Assets.xcassets */; };
-		876EAA4C2906B88E006B567B /* TabatUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876EAA4B2906B88E006B567B /* TabatUpTests.swift */; };
-		876EAA562906B88E006B567B /* TabatUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876EAA552906B88E006B567B /* TabatUpUITests.swift */; };
-		876EAA582906B88E006B567B /* TabatUpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876EAA572906B88E006B567B /* TabatUpUITestsLaunchTests.swift */; };
 		876EAA6F2906FF31006B567B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876EAA6E2906FF31006B567B /* HomeView.swift */; };
 		876EAA712906FF83006B567B /* DevelopmentAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 876EAA702906FF83006B567B /* DevelopmentAssets.xcassets */; };
-		876EAA722906FF83006B567B /* DevelopmentAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 876EAA702906FF83006B567B /* DevelopmentAssets.xcassets */; };
-		876EAA732906FF83006B567B /* DevelopmentAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 876EAA702906FF83006B567B /* DevelopmentAssets.xcassets */; };
 		878D32F5290BB18E0073D5A7 /* LoadWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878D32F4290BB18E0073D5A7 /* LoadWorkoutView.swift */; };
 		878D32F7290BB1970073D5A7 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878D32F6290BB1970073D5A7 /* TimerView.swift */; };
+		87AB151E2912E29600721ABF /* SetWorkoutViewModelFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AB151D2912E29600721ABF /* SetWorkoutViewModelFixture.swift */; };
+		87AB15202912E2A900721ABF /* SetWorkoutItemViewModelFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AB151F2912E2A900721ABF /* SetWorkoutItemViewModelFixture.swift */; };
+		87AB15222912E38A00721ABF /* SetWorkoutItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AB15212912E38A00721ABF /* SetWorkoutItemViewModelTests.swift */; };
+		87F2C8C329128C2100FC0CFB /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2C8C229128C2100FC0CFB /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		876EAA482906B88E006B567B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 876EAA2A2906B88D006B567B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 876EAA312906B88D006B567B;
-			remoteInfo = TabatUp;
-		};
-		876EAA522906B88E006B567B /* PBXContainerItemProxy */ = {
+		87AB15182912E28400721ABF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 876EAA2A2906B88D006B567B /* Project object */;
 			proxyType = 1;
@@ -54,7 +44,6 @@
 
 /* Begin PBXFileReference section */
 		8742F06B290BB91B00EA5BF4 /* SetWorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutModel.swift; sourceTree = "<group>"; };
-		8742F06F290BBB4300EA5BF4 /* SetWorkoutModel+Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SetWorkoutModel+Fixture.swift"; sourceTree = "<group>"; };
 		8742F07C290BC88B00EA5BF4 /* SetWorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutViewModel.swift; sourceTree = "<group>"; };
 		8742F089290BD41E00EA5BF4 /* SetWorkoutItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutItemView.swift; sourceTree = "<group>"; };
 		8742F08B290BD6B400EA5BF4 /* SetWorkoutOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutOption.swift; sourceTree = "<group>"; };
@@ -69,16 +58,16 @@
 		876EAA322906B88D006B567B /* TabatUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabatUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		876EAA352906B88D006B567B /* TabatUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabatUpApp.swift; sourceTree = "<group>"; };
 		876EAA392906B88E006B567B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		876EAA472906B88E006B567B /* TabatUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabatUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		876EAA4B2906B88E006B567B /* TabatUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabatUpTests.swift; sourceTree = "<group>"; };
-		876EAA512906B88E006B567B /* TabatUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabatUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		876EAA552906B88E006B567B /* TabatUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabatUpUITests.swift; sourceTree = "<group>"; };
-		876EAA572906B88E006B567B /* TabatUpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabatUpUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		876EAA6E2906FF31006B567B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		876EAA702906FF83006B567B /* DevelopmentAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DevelopmentAssets.xcassets; sourceTree = "<group>"; };
 		878D32F2290BB1800073D5A7 /* SetWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutView.swift; sourceTree = "<group>"; };
 		878D32F4290BB18E0073D5A7 /* LoadWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadWorkoutView.swift; sourceTree = "<group>"; };
 		878D32F6290BB1970073D5A7 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		87AB15142912E28400721ABF /* TabatUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabatUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		87AB151D2912E29600721ABF /* SetWorkoutViewModelFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutViewModelFixture.swift; sourceTree = "<group>"; };
+		87AB151F2912E2A900721ABF /* SetWorkoutItemViewModelFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutItemViewModelFixture.swift; sourceTree = "<group>"; };
+		87AB15212912E38A00721ABF /* SetWorkoutItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutItemViewModelTests.swift; sourceTree = "<group>"; };
+		87F2C8C229128C2100FC0CFB /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,14 +78,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		876EAA442906B88E006B567B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		876EAA4E2906B88E006B567B /* Frameworks */ = {
+		87AB15112912E28400721ABF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -106,22 +88,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8742F06D290BBB1500EA5BF4 /* TestingHelpers */ = {
-			isa = PBXGroup;
-			children = (
-				8742F06E290BBB2300EA5BF4 /* Extensions */,
-			);
-			path = TestingHelpers;
-			sourceTree = "<group>";
-		};
-		8742F06E290BBB2300EA5BF4 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				8742F06F290BBB4300EA5BF4 /* SetWorkoutModel+Fixture.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		8742F080290BD1E900EA5BF4 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,8 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				876EAA342906B88D006B567B /* TabatUp */,
-				876EAA4A2906B88E006B567B /* TabatUpTests */,
-				876EAA542906B88E006B567B /* TabatUpUITests */,
+				87AB15152912E28400721ABF /* TabatUpTests */,
 				876EAA332906B88D006B567B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -188,8 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				876EAA322906B88D006B567B /* TabatUp.app */,
-				876EAA472906B88E006B567B /* TabatUpTests.xctest */,
-				876EAA512906B88E006B567B /* TabatUpUITests.xctest */,
+				87AB15142912E28400721ABF /* TabatUpTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -202,24 +166,6 @@
 				876EAA662906FBB2006B567B /* UI */,
 			);
 			path = TabatUp;
-			sourceTree = "<group>";
-		};
-		876EAA4A2906B88E006B567B /* TabatUpTests */ = {
-			isa = PBXGroup;
-			children = (
-				8742F06D290BBB1500EA5BF4 /* TestingHelpers */,
-				876EAA4B2906B88E006B567B /* TabatUpTests.swift */,
-			);
-			path = TabatUpTests;
-			sourceTree = "<group>";
-		};
-		876EAA542906B88E006B567B /* TabatUpUITests */ = {
-			isa = PBXGroup;
-			children = (
-				876EAA552906B88E006B567B /* TabatUpUITests.swift */,
-				876EAA572906B88E006B567B /* TabatUpUITestsLaunchTests.swift */,
-			);
-			path = TabatUpUITests;
 			sourceTree = "<group>";
 		};
 		876EAA642906FB95006B567B /* Domain */ = {
@@ -263,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				874DE29429103EC400940912 /* UIScreenExtension.swift */,
+				87F2C8C229128C2100FC0CFB /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -306,6 +253,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		87AB15152912E28400721ABF /* TabatUpTests */ = {
+			isa = PBXGroup;
+			children = (
+				87AB151D2912E29600721ABF /* SetWorkoutViewModelFixture.swift */,
+				87AB151F2912E2A900721ABF /* SetWorkoutItemViewModelFixture.swift */,
+				87AB15212912E38A00721ABF /* SetWorkoutItemViewModelTests.swift */,
+			);
+			path = TabatUpTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -326,41 +283,23 @@
 			productReference = 876EAA322906B88D006B567B /* TabatUp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		876EAA462906B88E006B567B /* TabatUpTests */ = {
+		87AB15132912E28400721ABF /* TabatUpTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 876EAA5E2906B88E006B567B /* Build configuration list for PBXNativeTarget "TabatUpTests" */;
+			buildConfigurationList = 87AB151A2912E28400721ABF /* Build configuration list for PBXNativeTarget "TabatUpTests" */;
 			buildPhases = (
-				876EAA432906B88E006B567B /* Sources */,
-				876EAA442906B88E006B567B /* Frameworks */,
-				876EAA452906B88E006B567B /* Resources */,
+				87AB15102912E28400721ABF /* Sources */,
+				87AB15112912E28400721ABF /* Frameworks */,
+				87AB15122912E28400721ABF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				876EAA492906B88E006B567B /* PBXTargetDependency */,
+				87AB15192912E28400721ABF /* PBXTargetDependency */,
 			);
 			name = TabatUpTests;
 			productName = TabatUpTests;
-			productReference = 876EAA472906B88E006B567B /* TabatUpTests.xctest */;
+			productReference = 87AB15142912E28400721ABF /* TabatUpTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		876EAA502906B88E006B567B /* TabatUpUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 876EAA612906B88E006B567B /* Build configuration list for PBXNativeTarget "TabatUpUITests" */;
-			buildPhases = (
-				876EAA4D2906B88E006B567B /* Sources */,
-				876EAA4E2906B88E006B567B /* Frameworks */,
-				876EAA4F2906B88E006B567B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				876EAA532906B88E006B567B /* PBXTargetDependency */,
-			);
-			name = TabatUpUITests;
-			productName = TabatUpUITests;
-			productReference = 876EAA512906B88E006B567B /* TabatUpUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -375,11 +314,7 @@
 					876EAA312906B88D006B567B = {
 						CreatedOnToolsVersion = 14.1;
 					};
-					876EAA462906B88E006B567B = {
-						CreatedOnToolsVersion = 14.1;
-						TestTargetID = 876EAA312906B88D006B567B;
-					};
-					876EAA502906B88E006B567B = {
+					87AB15132912E28400721ABF = {
 						CreatedOnToolsVersion = 14.1;
 						TestTargetID = 876EAA312906B88D006B567B;
 					};
@@ -399,8 +334,7 @@
 			projectRoot = "";
 			targets = (
 				876EAA312906B88D006B567B /* TabatUp */,
-				876EAA462906B88E006B567B /* TabatUpTests */,
-				876EAA502906B88E006B567B /* TabatUpUITests */,
+				87AB15132912E28400721ABF /* TabatUpTests */,
 			);
 		};
 /* End PBXProject section */
@@ -415,19 +349,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		876EAA452906B88E006B567B /* Resources */ = {
+		87AB15122912E28400721ABF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				876EAA722906FF83006B567B /* DevelopmentAssets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		876EAA4F2906B88E006B567B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				876EAA732906FF83006B567B /* DevelopmentAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +369,6 @@
 				8742F094290BE53F00EA5BF4 /* WorkoutView.swift in Sources */,
 				8742F06C290BB91B00EA5BF4 /* SetWorkoutModel.swift in Sources */,
 				874DE29329103C4100940912 /* CircularLayoutView.swift in Sources */,
-				8742F07E290BCA5600EA5BF4 /* SetWorkoutModel+Fixture.swift in Sources */,
 				8742F092290BD9AA00EA5BF4 /* SetWorkoutItemViewModel.swift in Sources */,
 				878D32F5290BB18E0073D5A7 /* LoadWorkoutView.swift in Sources */,
 				876E1FA3290A7DA500041F19 /* Status.swift in Sources */,
@@ -454,41 +378,29 @@
 				876E1FA1290A7D2900041F19 /* RootViewModel.swift in Sources */,
 				878D32F7290BB1970073D5A7 /* TimerView.swift in Sources */,
 				876E1F9F290A7D0E00041F19 /* RootView.swift in Sources */,
+				87F2C8C329128C2100FC0CFB /* StringExtension.swift in Sources */,
 				8742F07D290BC88B00EA5BF4 /* SetWorkoutViewModel.swift in Sources */,
 				8742F084290BD27900EA5BF4 /* SetWorkoutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		876EAA432906B88E006B567B /* Sources */ = {
+		87AB15102912E28400721ABF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8742F070290BBB4300EA5BF4 /* SetWorkoutModel+Fixture.swift in Sources */,
-				876EAA4C2906B88E006B567B /* TabatUpTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		876EAA4D2906B88E006B567B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				876EAA582906B88E006B567B /* TabatUpUITestsLaunchTests.swift in Sources */,
-				876EAA562906B88E006B567B /* TabatUpUITests.swift in Sources */,
+				87AB151E2912E29600721ABF /* SetWorkoutViewModelFixture.swift in Sources */,
+				87AB15222912E38A00721ABF /* SetWorkoutItemViewModelTests.swift in Sources */,
+				87AB15202912E2A900721ABF /* SetWorkoutItemViewModelFixture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		876EAA492906B88E006B567B /* PBXTargetDependency */ = {
+		87AB15192912E28400721ABF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 876EAA312906B88D006B567B /* TabatUp */;
-			targetProxy = 876EAA482906B88E006B567B /* PBXContainerItemProxy */;
-		};
-		876EAA532906B88E006B567B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 876EAA312906B88D006B567B /* TabatUp */;
-			targetProxy = 876EAA522906B88E006B567B /* PBXContainerItemProxy */;
+			targetProxy = 87AB15182912E28400721ABF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -665,16 +577,14 @@
 			};
 			name = Release;
 		};
-		876EAA5F2906B88E006B567B /* Debug */ = {
+		87AB151B2912E28400721ABF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 94HWZ76SXD;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ismaelsabri.TabatUpTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -685,16 +595,14 @@
 			};
 			name = Debug;
 		};
-		876EAA602906B88E006B567B /* Release */ = {
+		87AB151C2912E28400721ABF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 94HWZ76SXD;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ismaelsabri.TabatUpTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -702,42 +610,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TabatUp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TabatUp";
-			};
-			name = Release;
-		};
-		876EAA622906B88E006B567B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 94HWZ76SXD;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ismaelsabri.TabatUpUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TabatUp;
-			};
-			name = Debug;
-		};
-		876EAA632906B88E006B567B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 94HWZ76SXD;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ismaelsabri.TabatUpUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TabatUp;
 			};
 			name = Release;
 		};
@@ -762,20 +634,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		876EAA5E2906B88E006B567B /* Build configuration list for PBXNativeTarget "TabatUpTests" */ = {
+		87AB151A2912E28400721ABF /* Build configuration list for PBXNativeTarget "TabatUpTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				876EAA5F2906B88E006B567B /* Debug */,
-				876EAA602906B88E006B567B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		876EAA612906B88E006B567B /* Build configuration list for PBXNativeTarget "TabatUpUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				876EAA622906B88E006B567B /* Debug */,
-				876EAA632906B88E006B567B /* Release */,
+				87AB151B2912E28400721ABF /* Debug */,
+				87AB151C2912E28400721ABF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

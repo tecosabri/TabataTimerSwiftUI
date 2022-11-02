@@ -41,13 +41,13 @@ struct SetWorkoutItemView: View {
             .frame(width: size, height: size)
             .zIndex(1)
         }
-        .onTapGesture {
-            if setWorkoutItem.option == .cycles {
-                setWorkoutItem.itemValue = "100"
-            } else {
-                setWorkoutItem.itemValue = "12"
+        // Min distance is 30 to avoid changes until user sees the value
+        .gesture(DragGesture()
+            .onChanged { value in
+                setWorkoutItem.onDraggedWith(offSet: value.translation.height)
             }
-        }
+        )
+        
     }
 }
 

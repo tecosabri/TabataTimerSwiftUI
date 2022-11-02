@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import Combine
 
-final class SetWorkoutItemViewModel: Identifiable, ObservableObject {
+final class SetWorkoutItemViewModel: ObservableObject {
     
     // MARK: - Properties
     /// The value of the item.
@@ -20,6 +21,8 @@ final class SetWorkoutItemViewModel: Identifiable, ObservableObject {
     let option: SetWorkoutOption
     /// Determines if a workout item value has been set
     var isSet: Bool = false
+    /// The last height value of the drag gesture
+    var lastDragValueHeight: CGFloat = 0
     
     // MARK: - Lifecycle
     /// Creates a set workout item view model from the view model for the setting option passed as parameter.
@@ -44,5 +47,30 @@ final class SetWorkoutItemViewModel: Identifiable, ObservableObject {
         case .sets:
             itemValue = viewModel.sets
         }
+    }
+    
+    // MARK: - Setting functions
+    /// Applies the offset to the value stored by this model.
+    /// - Parameter offSet: the positive or negative offset being applied by a dragging event.
+    func onDraggedWith(offSet: CGFloat) {
+        
+        guard let intItemValue = itemValue.intValue else { return }
+        // Title, cycles and sets options don't present this dragging behaviour
+        guard option != .title && option != .cycles && option != .sets else { return }
+        // Slow sensibility up to 1/2
+        guard Int(offSet) % 2 == 0 else { return }
+        
+        // When dragging down
+        if offSet > 0 {
+            if lastDragValueHeight > offSet { itemValue = String(intItemValue + 1) } // Dragging down-up
+            if lastDragValueHeight < offSet { itemValue = String(intItemValue - 1) } // Dragging down-down
+        }
+        // When dragging up
+        else if offSet < 0 {
+            if lastDragValueHeight > offSet { itemValue = String(intItemValue + 1) } // Dragging up-up
+            if lastDragValueHeight < offSet { itemValue = String(intItemValue - 1) } // Dragging up-down
+        }
+
+        lastDragValueHeight = offSet
     }
 }
