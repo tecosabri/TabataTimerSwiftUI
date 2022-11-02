@@ -22,7 +22,7 @@ struct CircularLayoutView : Layout {
             // Find a vector with an appropriate size and rotation.
             var point = CGPoint(x: 0, y: -radius)
                 .applying(CGAffineTransform(
-                    rotationAngle: 60 * Double(index)))
+                    rotationAngle: 280 * Double(index)))
             
             // Shift the vector to the middle of the region.
             point.x += bounds.midX
