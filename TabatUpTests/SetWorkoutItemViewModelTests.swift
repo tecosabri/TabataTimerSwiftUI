@@ -97,4 +97,45 @@ final class SetWorkoutItemViewModelTests: XCTestCase {
         XCTAssertEqual(sut.itemValue, "30")
     }
 
+    // MARK: - onDragEndedWith(offSet: CGFloat)
+    func test_onDragEndedWithOffset_whenDraggedUpCyclesOrSets_valueGetsIncremented() {
+        // Given a cycles item with value 5
+        let fiveCyclesWorkout = SetWorkoutViewModel.fixture(cycles: 5)
+        let sut = SetWorkoutItemViewModel.fixture(workoutOption: .cycles, setWorkoutViewModel: fiveCyclesWorkout)
+        // When dragged up (the offset is negative)
+        sut.onDragEndedWith(offSet: -5)
+        // Then the value gets incremented
+        XCTAssertEqual(sut.itemValue, "6")
+    }
+    
+    func test_onDragEndedWithOffset_whenDraggedDownCyclesOrSets_valueGetsDecremented() {
+        // Given a cycles item with value 5
+        let fiveCyclesWorkout = SetWorkoutViewModel.fixture(cycles: 5)
+        let sut = SetWorkoutItemViewModel.fixture(workoutOption: .cycles, setWorkoutViewModel: fiveCyclesWorkout)
+        // When dragged up (the offset is negative)
+        sut.onDragEndedWith(offSet: 5)
+        // Then the value gets incremented
+        XCTAssertEqual(sut.itemValue, "4")
+    }
+    
+    func test_onDragEndedWithOffset_whenDraggedUpWorkTimeItem_valueRemainsTheSame() {
+        // Given a work time item with 30 seconds time
+        let thirtySecondsWorkTimeWorkout = SetWorkoutViewModel.fixture(workTime: 30)
+        let sut = SetWorkoutItemViewModel.fixture(workoutOption: .workTime, setWorkoutViewModel: thirtySecondsWorkTimeWorkout)
+        // When dragged up (the offset is negative)
+        sut.onDragEndedWith(offSet: -5)
+        // Then the value remains the same
+        XCTAssertEqual(sut.itemValue, "30")
+    }
+    
+    func test_onDragEndedWithOffset_whenDraggedDownWorkTimeItem_valueRemainsTheSame() {
+        // Given a work time item with 30 seconds time
+        let thirtySecondsWorkTimeWorkout = SetWorkoutViewModel.fixture(workTime: 30)
+        let sut = SetWorkoutItemViewModel.fixture(workoutOption: .workTime, setWorkoutViewModel: thirtySecondsWorkTimeWorkout)
+        // When dragged down (the offset is positive)
+        sut.onDragEndedWith(offSet: 5)
+        // Then the value remains the same
+        XCTAssertEqual(sut.itemValue, "30")
+    }
+
 }

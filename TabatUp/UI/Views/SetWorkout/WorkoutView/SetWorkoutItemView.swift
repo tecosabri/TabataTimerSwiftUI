@@ -41,13 +41,14 @@ struct SetWorkoutItemView: View {
             .frame(width: size, height: size)
             .zIndex(1)
         }
-        // Min distance is 30 to avoid changes until user sees the value
         .gesture(DragGesture()
             .onChanged { value in
                 setWorkoutItem.onDraggedWith(offSet: value.translation.height)
             }
+            .onEnded { value in
+                setWorkoutItem.onDragEndedWith(offSet: value.translation.height)
+            }
         )
-        
     }
 }
 

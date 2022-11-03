@@ -51,7 +51,7 @@ final class SetWorkoutItemViewModel: ObservableObject {
     
     // MARK: - Setting functions
     /// Applies the offset to the value stored by this model.
-    /// - Parameter offSet: the positive or negative offset being applied by a dragging event.
+    /// - Parameter offSet: The positive or negative offset being applied by a dragging event.
     func onDraggedWith(offSet: CGFloat) {
         
         guard let intItemValue = itemValue.intValue else { return }
@@ -72,5 +72,18 @@ final class SetWorkoutItemViewModel: ObservableObject {
         }
 
         lastDragValueHeight = offSet
+    }
+    
+    /// Increments or decrements by one the value depending on the offset, being incremented if the offset is negative and decremented if positive.
+    /// - Parameter offSet: The positive or negative offset being applied by a dragging event-
+    func onDragEndedWith(offSet: CGFloat) {
+        
+        guard let intItemValue = itemValue.intValue else { return }
+        // Cycles and sets options are the options presenting this behaviour
+        guard option == .cycles || option == .sets else { return }
+        // When dragged up, increment value
+        if offSet < 0 { itemValue = String(intItemValue + 1) }
+        // When dragged down, decrement value
+        if offSet > 0 { itemValue = String(intItemValue - 1) }
     }
 }

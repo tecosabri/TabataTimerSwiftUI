@@ -22,7 +22,7 @@ struct CircularLayoutView : Layout {
             // Find a vector with an appropriate size and rotation.
             var point = CGPoint(x: 0, y: -radius)
                 .applying(CGAffineTransform(
-                    rotationAngle: 280 * Double(index)))
+                    rotationAngle: 26 * Double(index)))
             
             // Shift the vector to the middle of the region.
             point.x += bounds.midX
@@ -43,17 +43,23 @@ struct CircularLayout_Previews: PreviewProvider {
             Text(setWorkoutViewModel.title)
             // Set a circular layout around the title
             CircularLayoutView(setWorkoutViewModel: setWorkoutViewModel) {
+                // Prepare time
                 SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .prepareTime, fromSetWorkoutViewModel: setWorkoutViewModel))
                 
-                SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .workTime, fromSetWorkoutViewModel: setWorkoutViewModel))
-                
+                // Sets
                 SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .sets, fromSetWorkoutViewModel: setWorkoutViewModel))
                 
+                // Cycle rest
                 SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .restBetweenCycles, fromSetWorkoutViewModel: setWorkoutViewModel))
                 
-                SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .restBetweenSets, fromSetWorkoutViewModel: setWorkoutViewModel))
+                // Worktime
+                SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .workTime, fromSetWorkoutViewModel: setWorkoutViewModel))
                 
+                // Cycles
                 SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .cycles, fromSetWorkoutViewModel: setWorkoutViewModel))
+                
+                // Set rest
+                SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .restBetweenSets, fromSetWorkoutViewModel: setWorkoutViewModel))
             }
         }
     }
