@@ -40,6 +40,8 @@ struct WorkoutView: View {
                     
                     // Set rest
                     SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .restBetweenSets, fromSetWorkoutViewModel: setWorkoutViewModel))
+                    
+                    Text(setWorkoutViewModel.currentlyModifiedValue ?? "")
                 }
             }
         }

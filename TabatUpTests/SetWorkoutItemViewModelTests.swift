@@ -9,6 +9,66 @@ import XCTest
 @testable import TabatUp
 
 final class SetWorkoutItemViewModelTests: XCTestCase {
+    
+    // MARK: - updateSetWorkoutViewModel()
+    func test_updateSetWorkoutViewModel_whenUpdatedValueInItem_SameValueGetsUpdatedInItemWorkoutViewModel() {
+        // Given a workout item view model with option prepare time and value 10
+        let randomWorkout = SetWorkoutViewModel.fixture(prepareTime: 10)
+        let sut = SetWorkoutItemViewModel(workoutOption: .prepareTime, fromSetWorkoutViewModel: randomWorkout)
+        XCTAssertEqual(randomWorkout.prepareTime, sut.itemValue)
+        // When changed the item value to 20 and updated the view model
+        sut.itemValue = "20"
+        sut.updateSetWorkoutViewModel()
+        // Then the view model prepare time has to be 20 seconds
+        XCTAssertEqual(sut.setWorkoutViewModel.prepareTime, "20")
+    }
+    
+    func test_updateSetWorkoutViewModel_whenUpdatedValueInItem_OtherValuesRemainTheSameInItemWorkoutViewModel() {
+        // Given a workout item view model with option prepare time and value 10
+        let randomWorkout = SetWorkoutViewModel.fixture(prepareTime: 10, workTime: 33)
+        let sut = SetWorkoutItemViewModel(workoutOption: .prepareTime, fromSetWorkoutViewModel: randomWorkout)
+        XCTAssertEqual(randomWorkout.prepareTime, sut.itemValue)
+        // When changed the item value to 20 and updated the view model
+        sut.itemValue = "20"
+        sut.updateSetWorkoutViewModel()
+        // Then the view model prepare time has to be 20 seconds
+        XCTAssertEqual(sut.setWorkoutViewModel.workTime, "33")
+    }
+    
+    func test_updateSetWorkoutViewModel_whenUpdatedAllDifferentOptionsInDifferentItems_ThoseValuesGetUpdatedInItemWorkoutViewModel() {
+        // Given a workout and items for all its options
+        let randomWorkout = SetWorkoutViewModel.fixture(title: "title", prepareTime: 1, workTime: 1, restBetweenCycles: 1, cycles: 1, sets: 1, restBetweenSets: 1)
+        let sutTitle = SetWorkoutItemViewModel(workoutOption: .title, fromSetWorkoutViewModel: randomWorkout)
+        let sutPrepareTime = SetWorkoutItemViewModel(workoutOption: .prepareTime, fromSetWorkoutViewModel: randomWorkout)
+        let sutWorkTime = SetWorkoutItemViewModel(workoutOption: .workTime, fromSetWorkoutViewModel: randomWorkout)
+        let sutRestBetweenCycles = SetWorkoutItemViewModel(workoutOption: .restBetweenCycles, fromSetWorkoutViewModel: randomWorkout)
+        let sutCycles = SetWorkoutItemViewModel(workoutOption: .cycles, fromSetWorkoutViewModel: randomWorkout)
+        let sutSets = SetWorkoutItemViewModel(workoutOption: .sets, fromSetWorkoutViewModel: randomWorkout)
+        let sutRestBetweenSets = SetWorkoutItemViewModel(workoutOption: .restBetweenSets, fromSetWorkoutViewModel: randomWorkout)
+        // When changed the item values and updated the view model
+        sutTitle.itemValue = "title2"
+        sutTitle.updateSetWorkoutViewModel()
+        sutPrepareTime.itemValue = "2"
+        sutPrepareTime.updateSetWorkoutViewModel()
+        sutWorkTime.itemValue = "2"
+        sutWorkTime.updateSetWorkoutViewModel()
+        sutRestBetweenCycles.itemValue = "2"
+        sutRestBetweenCycles.updateSetWorkoutViewModel()
+        sutCycles.itemValue = "2"
+        sutCycles.updateSetWorkoutViewModel()
+        sutSets.itemValue = "2"
+        sutSets.updateSetWorkoutViewModel()
+        sutRestBetweenSets.itemValue = "2"
+        sutRestBetweenSets.updateSetWorkoutViewModel()
+        // Then the view model prepare time has to be 20 seconds
+        XCTAssertEqual(sutTitle.setWorkoutViewModel.title, "title2")
+        XCTAssertEqual(sutPrepareTime.setWorkoutViewModel.prepareTime, "2")
+        XCTAssertEqual(sutWorkTime.setWorkoutViewModel.workTime, "2")
+        XCTAssertEqual(sutRestBetweenCycles.setWorkoutViewModel.restBetweenCycles, "2")
+        XCTAssertEqual(sutCycles.setWorkoutViewModel.cycles, "2")
+        XCTAssertEqual(sutSets.setWorkoutViewModel.sets, "2")
+        XCTAssertEqual(sutRestBetweenSets.setWorkoutViewModel.restBetweenSets, "2")
+    }
 
     // MARK: - onDraggedWith(offSet: CGFloat)
     func test_onDraggedWithOffSet_whenDraggedUpTitleSetsOrCyclesItems_valueRemainsTheSame() {

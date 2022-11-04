@@ -14,8 +14,8 @@
             filePath = "TabatUp/UI/ViewModels/SetWorkoutItemViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "onDragEndedWith(offSet:)"
             landmarkType = "7">
          </BreakpointContent>

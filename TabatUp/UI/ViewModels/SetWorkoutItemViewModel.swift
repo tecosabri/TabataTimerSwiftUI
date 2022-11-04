@@ -17,6 +17,8 @@ final class SetWorkoutItemViewModel: ObservableObject {
             isSet = true
         }
     }
+    /// The workout view model that generates this item
+    let setWorkoutViewModel: SetWorkoutViewModel
     /// The option to be set for workout.
     let option: SetWorkoutOption
     /// Determines if a workout item value has been set
@@ -30,7 +32,10 @@ final class SetWorkoutItemViewModel: ObservableObject {
     ///   - option: The option to set.
     ///   - viewModel: The view model that integrates all the setting options.
     init(workoutOption option: SetWorkoutOption, fromSetWorkoutViewModel viewModel: SetWorkoutViewModel) {
+
+        self.setWorkoutViewModel = viewModel
         self.option = option
+        
         switch option {
         case .title:
             itemValue = viewModel.title
@@ -50,6 +55,26 @@ final class SetWorkoutItemViewModel: ObservableObject {
     }
     
     // MARK: - Setting functions
+    /// Assigns the item value to its option property in the set workout view model.
+    func updateSetWorkoutViewModel() {
+        switch option {
+        case .title:
+            setWorkoutViewModel.title = itemValue
+        case .prepareTime:
+            setWorkoutViewModel.prepareTime = itemValue
+        case .workTime:
+            setWorkoutViewModel.workTime = itemValue
+        case .restBetweenCycles:
+            setWorkoutViewModel.restBetweenCycles = itemValue
+        case .cycles:
+            setWorkoutViewModel.cycles = itemValue
+        case .restBetweenSets:
+            setWorkoutViewModel.restBetweenSets = itemValue
+        case .sets:
+            setWorkoutViewModel.sets = itemValue
+        }
+    }
+    
     /// Applies the offset to the value stored by this model.
     /// - Parameter offSet: The positive or negative offset being applied by a dragging event.
     func onDraggedWith(offSet: CGFloat) {
@@ -72,6 +97,8 @@ final class SetWorkoutItemViewModel: ObservableObject {
         }
 
         lastDragValueHeight = offSet
+        // Update the view model for item value to be persisted
+        updateSetWorkoutViewModel()
     }
     
     /// Increments or decrements by one the value depending on the offset, being incremented if the offset is negative and decremented if positive.
@@ -85,5 +112,8 @@ final class SetWorkoutItemViewModel: ObservableObject {
         if offSet < 0 { itemValue = String(intItemValue + 1) }
         // When dragged down, decrement value
         if offSet > 0 { itemValue = String(intItemValue - 1) }
+        
+        // Update the view model for item value to be persisted
+        updateSetWorkoutViewModel()
     }
 }
