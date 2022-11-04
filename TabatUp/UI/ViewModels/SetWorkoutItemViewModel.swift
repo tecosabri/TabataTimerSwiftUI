@@ -12,17 +12,11 @@ final class SetWorkoutItemViewModel: ObservableObject {
     
     // MARK: - Properties
     /// The value of the item.
-    @Published var itemValue: String {
-        didSet {
-            isSet = true
-        }
-    }
+    @Published var itemValue: String
     /// The workout view model that generates this item
     let setWorkoutViewModel: SetWorkoutViewModel
     /// The option to be set for workout.
     let option: SetWorkoutOption
-    /// Determines if a workout item value has been set
-    var isSet: Bool = false
     /// The last height value of the drag gesture
     var lastDragValueHeight: CGFloat = 0
     

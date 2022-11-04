@@ -10,7 +10,7 @@ import SwiftUI
 struct CircularLayoutView : Layout {
     
     let radius: CGFloat = (UIScreen.screenWidth * 0.7) / 2.0
-    var setWorkoutViewModel: SetWorkoutViewModel
+    @ObservedObject var setWorkoutViewModel: SetWorkoutViewModel
     
     
     func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {

@@ -14,13 +14,12 @@ struct SetWorkoutItemView: View {
     
     var body: some View {
         ZStack {
-            // Circle to be coloured if the setworkout item value is modified
-            if setWorkoutItem.isSet {
-                Circle()
-                    .fill(.red)
-                    .frame(width: size, height: size)
-                    .zIndex(0)
-            }
+            // Circle to be coloured as animation
+//            Circle()
+//                .fill(.white)
+//                .frame(width: size, height: size)
+//                .zIndex(0)
+            
             // Info of the setworkout item and stroke of the circle
             VStack {
                 Text(setWorkoutItem.option.rawValue)
