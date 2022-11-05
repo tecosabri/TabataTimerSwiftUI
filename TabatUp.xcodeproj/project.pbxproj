@@ -24,6 +24,7 @@
 		876EAA3A2906B88E006B567B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 876EAA392906B88E006B567B /* Assets.xcassets */; };
 		876EAA6F2906FF31006B567B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876EAA6E2906FF31006B567B /* HomeView.swift */; };
 		876EAA712906FF83006B567B /* DevelopmentAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 876EAA702906FF83006B567B /* DevelopmentAssets.xcassets */; };
+		8781F57C2916FE420051181A /* FadeOutViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781F57B2916FE420051181A /* FadeOutViewBuilder.swift */; };
 		878D32F5290BB18E0073D5A7 /* LoadWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878D32F4290BB18E0073D5A7 /* LoadWorkoutView.swift */; };
 		878D32F7290BB1970073D5A7 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878D32F6290BB1970073D5A7 /* TimerView.swift */; };
 		87AB151E2912E29600721ABF /* SetWorkoutViewModelFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AB151D2912E29600721ABF /* SetWorkoutViewModelFixture.swift */; };
@@ -60,6 +61,7 @@
 		876EAA392906B88E006B567B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		876EAA6E2906FF31006B567B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		876EAA702906FF83006B567B /* DevelopmentAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DevelopmentAssets.xcassets; sourceTree = "<group>"; };
+		8781F57B2916FE420051181A /* FadeOutViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeOutViewBuilder.swift; sourceTree = "<group>"; };
 		878D32F2290BB1800073D5A7 /* SetWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutView.swift; sourceTree = "<group>"; };
 		878D32F4290BB18E0073D5A7 /* LoadWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadWorkoutView.swift; sourceTree = "<group>"; };
 		878D32F6290BB1970073D5A7 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		876EAA662906FBB2006B567B /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8781F57D2916FF010051181A /* ViewBuilders */,
 				876EAA6C2906FF10006B567B /* ViewModels */,
 				876EAA6D2906FF1A006B567B /* Views */,
 			);
@@ -251,6 +254,14 @@
 				8742F088290BD2DB00EA5BF4 /* LoadWorkout */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8781F57D2916FF010051181A /* ViewBuilders */ = {
+			isa = PBXGroup;
+			children = (
+				8781F57B2916FE420051181A /* FadeOutViewBuilder.swift */,
+			);
+			path = ViewBuilders;
 			sourceTree = "<group>";
 		};
 		87AB15152912E28400721ABF /* TabatUpTests */ = {
@@ -374,6 +385,7 @@
 				876E1FA3290A7DA500041F19 /* Status.swift in Sources */,
 				8742F08F290BD84200EA5BF4 /* PreviewWorkoutModels.swift in Sources */,
 				8742F08C290BD6B400EA5BF4 /* SetWorkoutOption.swift in Sources */,
+				8781F57C2916FE420051181A /* FadeOutViewBuilder.swift in Sources */,
 				876EAA6F2906FF31006B567B /* HomeView.swift in Sources */,
 				876E1FA1290A7D2900041F19 /* RootViewModel.swift in Sources */,
 				878D32F7290BB1970073D5A7 /* TimerView.swift in Sources */,
