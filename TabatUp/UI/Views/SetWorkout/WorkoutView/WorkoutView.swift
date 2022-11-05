@@ -42,20 +42,23 @@ struct WorkoutView: View {
                     // Set rest
                     SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .restBetweenSets, fromSetWorkoutViewModel: setWorkoutViewModel))
                     
-                    
-                    Text(setWorkoutViewModel.currentlyModifiedValue ?? "")
-                        .opacity(showView ? 1 : 0)
-                        .onChange(of: setWorkoutViewModel.currentlyModifiedValue) { _ in
-                            showView = true
+                    VStack {
+                        Text(setWorkoutViewModel.currentlyModifiedValue?.first?.key.rawValue ?? "")
+                            .bold()
+                            .font(.caption)
+                        Text(setWorkoutViewModel.currentlyModifiedValue?.values.first ?? "")
+                            .bold()
+                            .font(.title)
+                    }
+                    .opacity(showView ? 1 : 0)
+                    .onChange(of: setWorkoutViewModel.currentlyModifiedValue) { _ in
+                        showView = true
+                    }
+                    .onChange(of: showView) { _ in
+                        withAnimation (.easeIn(duration: 2)) {
+                            showView = false
                         }
-                        .onChange(of: showView) { _ in
-                            withAnimation (.easeIn(duration: 2)) {
-                                showView = false
-                            }
-                        }
-                        .bold()
-                        .font(.title)
-
+                    }
                 }
             }
         }

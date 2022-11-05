@@ -14,19 +14,19 @@ final class SetWorkoutViewModel: ObservableObject {
     /// The title of the workout.
     @Published var title: String
     /// The time to prepare before the whole workout starts.
-    @Published var prepareTime: String {didSet{currentlyModifiedValue = prepareTime}}
+    @Published var prepareTime: String {didSet{currentlyModifiedValue = [.prepareTime: prepareTime]}}
     /// The round workout time.
-    @Published var workTime: String {didSet{currentlyModifiedValue = workTime}}
+    @Published var workTime: String {didSet{currentlyModifiedValue = [.workTime: workTime]}}
     /// The rest time between cycles.
-    @Published var restBetweenCycles: String {didSet{currentlyModifiedValue = restBetweenCycles}}
+    @Published var restBetweenCycles: String {didSet{currentlyModifiedValue = [.restBetweenCycles: restBetweenCycles]}}
     /// The number of cycles in each set.
-    @Published var cycles: String {didSet{currentlyModifiedValue = cycles}}
+    @Published var cycles: String {didSet{currentlyModifiedValue = [.cycles: cycles]}}
     /// The number of sets in the workout.
-    @Published var sets: String {didSet{currentlyModifiedValue = sets}}
+    @Published var sets: String {didSet{currentlyModifiedValue = [.sets: sets]}}
     /// The rest time between sets.
-    @Published var restBetweenSets: String {didSet{currentlyModifiedValue = restBetweenSets}}
+    @Published var restBetweenSets: String {didSet{currentlyModifiedValue = [.restBetweenSets: restBetweenSets]}}
     /// A string representing the value of the property that is being modified.
-    @Published var currentlyModifiedValue: String?
+    @Published var currentlyModifiedValue: [SetWorkoutOption: String]?
         
     // MARK: - Lifecycle
     init(withWorkoutModel workout: SetWorkoutModel) {
