@@ -10,6 +10,7 @@ import SwiftUI
 struct WorkoutView: View {
     
     @ObservedObject var setWorkoutViewModel: SetWorkoutViewModel
+    @State private var showView = false
     
     var body: some View {
         VStack {
@@ -41,7 +42,20 @@ struct WorkoutView: View {
                     // Set rest
                     SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .restBetweenSets, fromSetWorkoutViewModel: setWorkoutViewModel))
                     
+                    
                     Text(setWorkoutViewModel.currentlyModifiedValue ?? "")
+                        .opacity(showView ? 1 : 0)
+                        .onChange(of: setWorkoutViewModel.currentlyModifiedValue) { _ in
+                            showView = true
+                        }
+                        .onChange(of: showView) { _ in
+                            withAnimation (.easeIn(duration: 2)) {
+                                showView = false
+                            }
+                        }
+                        .bold()
+                        .font(.title)
+
                 }
             }
         }
