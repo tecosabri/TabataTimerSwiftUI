@@ -14,12 +14,6 @@ struct SetWorkoutItemView: View {
     
     var body: some View {
         ZStack {
-            // Circle to be coloured as animation
-//            Circle()
-//                .fill(.white)
-//                .frame(width: size, height: size)
-//                .zIndex(0)
-            
             // Info of the setworkout item and stroke of the circle
             VStack {
                 Text(setWorkoutItem.option.rawValue)
@@ -48,6 +42,9 @@ struct SetWorkoutItemView: View {
                 setWorkoutItem.onDragEndedWith(offSet: value.translation.height)
             }
         )
+        .onTapGesture(count: 2) {
+            setWorkoutItem.onTappedTwice()
+        }
     }
 }
 

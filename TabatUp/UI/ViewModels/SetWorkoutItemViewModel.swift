@@ -78,7 +78,6 @@ final class SetWorkoutItemViewModel: ObservableObject {
         guard option != .title && option != .cycles && option != .sets else { return }
         // Slow sensibility up to 1/2
         guard Int(offSet) % 2 == 0 else { return }
-        
         // When dragging down
         if offSet > 0 {
             if lastDragValueHeight > offSet { itemValue = String(intItemValue + 1) } // Dragging down-up
@@ -88,6 +87,8 @@ final class SetWorkoutItemViewModel: ObservableObject {
         }
         // When dragging up
         else if offSet < 0 {
+            print("Offset is \(offSet) and lastdragged is \(lastDragValueHeight)")
+
             if lastDragValueHeight > offSet { itemValue = String(intItemValue + 1) } // Dragging up-up
             if lastDragValueHeight < offSet { itemValue = String(intItemValue - 1) } // Dragging up-down
         }
@@ -115,6 +116,39 @@ final class SetWorkoutItemViewModel: ObservableObject {
         }
         
         // Update the view model for item value to be persisted
+        updateSetWorkoutViewModel()
+    }
+    
+    
+    /// Updates the value of the item to its default value.
+    ///
+    /// The default values are the following:
+    /// - Title: "Default"
+    /// - Prepare time: 10
+    /// - Work time: 30
+    /// - Rest between cycles: 10
+    /// - Cycles: 4
+    /// - Sets: 1
+    /// - Rest between sets: 0
+    func onTappedTwice() {
+        let defaultViewModel = SetWorkoutViewModel(withWorkoutModel: SetWorkoutModel())
+        switch option {
+        case .title:
+            itemValue = defaultViewModel.title
+        case .prepareTime:
+            itemValue = defaultViewModel.prepareTime
+        case .workTime:
+            itemValue = defaultViewModel.workTime
+        case .restBetweenCycles:
+            itemValue = defaultViewModel.restBetweenCycles
+        case .cycles:
+            itemValue = defaultViewModel.cycles
+        case .restBetweenSets:
+            itemValue = defaultViewModel.restBetweenSets
+        case .sets:
+            itemValue = defaultViewModel.sets
+        }
+        
         updateSetWorkoutViewModel()
     }
 }

@@ -14,19 +14,21 @@ final class SetWorkoutViewModel: ObservableObject {
     /// The title of the workout.
     @Published var title: String
     /// The time to prepare before the whole workout starts.
-    @Published var prepareTime: String {didSet{currentlyModifiedValue = [.prepareTime: prepareTime]}}
+    @Published var prepareTime: String {didSet{currentlyModifiedItem = [.prepareTime: prepareTime]}}
     /// The round workout time.
-    @Published var workTime: String {didSet{currentlyModifiedValue = [.workTime: workTime]}}
+    @Published var workTime: String {didSet{currentlyModifiedItem = [.workTime: workTime]}}
     /// The rest time between cycles.
-    @Published var restBetweenCycles: String {didSet{currentlyModifiedValue = [.restBetweenCycles: restBetweenCycles]}}
+    @Published var restBetweenCycles: String {didSet{currentlyModifiedItem = [.restBetweenCycles: restBetweenCycles]}}
     /// The number of cycles in each set.
-    @Published var cycles: String {didSet{currentlyModifiedValue = [.cycles: cycles]}}
+    @Published var cycles: String {didSet{currentlyModifiedItem = [.cycles: cycles]}}
     /// The number of sets in the workout.
-    @Published var sets: String {didSet{currentlyModifiedValue = [.sets: sets]}}
+    @Published var sets: String {didSet{currentlyModifiedItem = [.sets: sets]}}
     /// The rest time between sets.
-    @Published var restBetweenSets: String {didSet{currentlyModifiedValue = [.restBetweenSets: restBetweenSets]}}
+    @Published var restBetweenSets: String {didSet{currentlyModifiedItem = [.restBetweenSets: restBetweenSets]}}
     /// A string representing the value of the property that is being modified.
-    @Published var currentlyModifiedValue: [SetWorkoutOption: String]?
+    @Published var currentlyModifiedItem: [SetWorkoutOption: String]?
+    /// The items corresponding the different options of a workout
+    var items: [SetWorkoutOption: SetWorkoutItemViewModel] = [:]
         
     // MARK: - Lifecycle
     init(withWorkoutModel workout: SetWorkoutModel) {
@@ -37,5 +39,18 @@ final class SetWorkoutViewModel: ObservableObject {
         self.cycles = String(workout.cycles)
         self.sets = String(workout.sets)
         self.restBetweenSets = String(workout.restBetweenSets)
+        populateItems()
+    }
+    
+    // MARK: - Preset functions
+    /// Populates the items of the workout view model with the data stored in a workout model. Function to be called after the initiialization of the other properties
+    func populateItems() {
+        items[.title] = SetWorkoutItemViewModel(workoutOption: .title, fromSetWorkoutViewModel: self)
+        items[.prepareTime] = SetWorkoutItemViewModel(workoutOption: .prepareTime, fromSetWorkoutViewModel: self)
+        items[.workTime] = SetWorkoutItemViewModel(workoutOption: .workTime, fromSetWorkoutViewModel: self)
+        items[.restBetweenCycles] = SetWorkoutItemViewModel(workoutOption: .restBetweenCycles, fromSetWorkoutViewModel: self)
+        items[.cycles] = SetWorkoutItemViewModel(workoutOption: .cycles, fromSetWorkoutViewModel: self)
+        items[.sets] = SetWorkoutItemViewModel(workoutOption: .sets, fromSetWorkoutViewModel: self)
+        items[.restBetweenSets] = SetWorkoutItemViewModel(workoutOption: .restBetweenSets, fromSetWorkoutViewModel: self)
     }
 }

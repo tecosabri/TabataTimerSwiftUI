@@ -24,30 +24,30 @@ struct WorkoutView: View {
                     .font(.title2)
                 // Set a circular layout around the title
                 CircularLayoutView(setWorkoutViewModel: setWorkoutViewModel) {
-                    // Prepare time
-                    SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .prepareTime, fromSetWorkoutViewModel: setWorkoutViewModel))
+                    // Prepare time. Force unwrap as items are already set
+                    SetWorkoutItemView(setWorkoutItem: setWorkoutViewModel.items[.prepareTime]!)
                     
                     // Sets
-                    SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .sets, fromSetWorkoutViewModel: setWorkoutViewModel))
+                    SetWorkoutItemView(setWorkoutItem: setWorkoutViewModel.items[.sets]!)
                     
                     // Cycle rest
-                    SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .restBetweenCycles, fromSetWorkoutViewModel: setWorkoutViewModel))
+                    SetWorkoutItemView(setWorkoutItem: setWorkoutViewModel.items[.restBetweenCycles]!)
                     
                     // Worktime
-                    SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .workTime, fromSetWorkoutViewModel: setWorkoutViewModel))
+                    SetWorkoutItemView(setWorkoutItem: setWorkoutViewModel.items[.workTime]!)
                     
                     // Cycles
-                    SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .cycles, fromSetWorkoutViewModel: setWorkoutViewModel))
+                    SetWorkoutItemView(setWorkoutItem: setWorkoutViewModel.items[.cycles]!)
                     
                     // Set rest
-                    SetWorkoutItemView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .restBetweenSets, fromSetWorkoutViewModel: setWorkoutViewModel))
+                    SetWorkoutItemView(setWorkoutItem: setWorkoutViewModel.items[.restBetweenSets]!)
                     
                     // Currently modified value appears when any of the items is modified
                     FadeOutVStack(setWorkoutViewModel: setWorkoutViewModel) {
-                        Text(setWorkoutViewModel.currentlyModifiedValue?.first?.key.rawValue ?? "")
+                        Text(setWorkoutViewModel.currentlyModifiedItem?.first?.key.rawValue ?? "")
                             .bold()
                             .font(.caption)
-                        Text(setWorkoutViewModel.currentlyModifiedValue?.values.first ?? "")
+                        Text(setWorkoutViewModel.currentlyModifiedItem?.values.first ?? "")
                             .bold()
                             .font(.title)
                     }

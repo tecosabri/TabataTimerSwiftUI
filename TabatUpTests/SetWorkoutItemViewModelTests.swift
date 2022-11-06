@@ -234,4 +234,82 @@ final class SetWorkoutItemViewModelTests: XCTestCase {
         XCTAssertEqual(sut.itemValue, "30")
     }
 
+    // MARK: - onTappedTwice()
+    func test_onTappedTwice_whenItemValueIsNotTheDefaultValue_itemValueUpdatesToDefaultValue() {
+        // Given a workout and its differente option items with values different from default value, e.g. worktime = 60
+        let notDefaultWorkout = SetWorkoutViewModel.fixture(prepareTime: 1, workTime: 1, restBetweenCycles: 1, cycles: 1, sets: 1, restBetweenSets: 1)
+        let defaultWorkout = SetWorkoutViewModel.fixture()
+        let prepareTimeItem = SetWorkoutItemViewModel(workoutOption: .prepareTime, fromSetWorkoutViewModel: notDefaultWorkout)
+        let workTime = SetWorkoutItemViewModel(workoutOption: .workTime, fromSetWorkoutViewModel: notDefaultWorkout)
+        let restBetweenCycles = SetWorkoutItemViewModel(workoutOption: .restBetweenCycles, fromSetWorkoutViewModel: notDefaultWorkout)
+        let cycles = SetWorkoutItemViewModel(workoutOption: .cycles, fromSetWorkoutViewModel: notDefaultWorkout)
+        let sets = SetWorkoutItemViewModel(workoutOption: .sets, fromSetWorkoutViewModel: notDefaultWorkout)
+        let restBetweenSets = SetWorkoutItemViewModel(workoutOption: .restBetweenSets, fromSetWorkoutViewModel: notDefaultWorkout)
+        // When tapped twice
+        prepareTimeItem.onTappedTwice()
+        workTime.onTappedTwice()
+        restBetweenCycles.onTappedTwice()
+        cycles.onTappedTwice()
+        sets.onTappedTwice()
+        restBetweenSets.onTappedTwice()
+        // Then the value updates to default value
+        XCTAssertEqual(prepareTimeItem.itemValue, defaultWorkout.prepareTime)
+        XCTAssertEqual(workTime.itemValue, defaultWorkout.workTime)
+        XCTAssertEqual(restBetweenCycles.itemValue, defaultWorkout.restBetweenCycles)
+        XCTAssertEqual(cycles.itemValue, defaultWorkout.cycles)
+        XCTAssertEqual(sets.itemValue, defaultWorkout.sets)
+        XCTAssertEqual(restBetweenSets.itemValue, defaultWorkout.restBetweenSets)
+    }
+    
+    func test_onTappedTwice_whenItemValueIsTheDefaultValue_itemValueRemainsTheSame() {
+        // Given a workout and its differente option items with values different from default value, e.g. worktime = 60
+        let defaultWorkout1 = SetWorkoutViewModel.fixture(prepareTime: 1, workTime: 1, restBetweenCycles: 1, cycles: 1, sets: 1, restBetweenSets: 1)
+        let defaultWorkout2 = SetWorkoutViewModel.fixture()
+        let prepareTimeItem = SetWorkoutItemViewModel(workoutOption: .prepareTime, fromSetWorkoutViewModel: defaultWorkout1)
+        let workTime = SetWorkoutItemViewModel(workoutOption: .workTime, fromSetWorkoutViewModel: defaultWorkout1)
+        let restBetweenCycles = SetWorkoutItemViewModel(workoutOption: .restBetweenCycles, fromSetWorkoutViewModel: defaultWorkout1)
+        let cycles = SetWorkoutItemViewModel(workoutOption: .cycles, fromSetWorkoutViewModel: defaultWorkout1)
+        let sets = SetWorkoutItemViewModel(workoutOption: .sets, fromSetWorkoutViewModel: defaultWorkout1)
+        let restBetweenSets = SetWorkoutItemViewModel(workoutOption: .restBetweenSets, fromSetWorkoutViewModel: defaultWorkout1)
+        // When tapped twice
+        prepareTimeItem.onTappedTwice()
+        workTime.onTappedTwice()
+        restBetweenCycles.onTappedTwice()
+        cycles.onTappedTwice()
+        sets.onTappedTwice()
+        restBetweenSets.onTappedTwice()
+        // Then the value updates to default value
+        XCTAssertEqual(prepareTimeItem.itemValue, defaultWorkout2.prepareTime)
+        XCTAssertEqual(workTime.itemValue, defaultWorkout2.workTime)
+        XCTAssertEqual(restBetweenCycles.itemValue, defaultWorkout2.restBetweenCycles)
+        XCTAssertEqual(cycles.itemValue, defaultWorkout2.cycles)
+        XCTAssertEqual(sets.itemValue, defaultWorkout2.sets)
+        XCTAssertEqual(restBetweenSets.itemValue, defaultWorkout2.restBetweenSets)
+    }
+    
+    func test_onTappedTwice_whenItemValueIsNotTheDefaultValue_SetWorkoutViewModelUpdatesToDefaultValue() {
+        // Given a workout and its differente option items with values different from default value, e.g. worktime = 60
+        let notDefaultWorkout = SetWorkoutViewModel.fixture(prepareTime: 1, workTime: 1, restBetweenCycles: 1, cycles: 1, sets: 1, restBetweenSets: 1)
+        let defaultWorkout = SetWorkoutViewModel.fixture()
+        let prepareTimeItem = SetWorkoutItemViewModel(workoutOption: .prepareTime, fromSetWorkoutViewModel: notDefaultWorkout)
+        let workTime = SetWorkoutItemViewModel(workoutOption: .workTime, fromSetWorkoutViewModel: notDefaultWorkout)
+        let restBetweenCycles = SetWorkoutItemViewModel(workoutOption: .restBetweenCycles, fromSetWorkoutViewModel: notDefaultWorkout)
+        let cycles = SetWorkoutItemViewModel(workoutOption: .cycles, fromSetWorkoutViewModel: notDefaultWorkout)
+        let sets = SetWorkoutItemViewModel(workoutOption: .sets, fromSetWorkoutViewModel: notDefaultWorkout)
+        let restBetweenSets = SetWorkoutItemViewModel(workoutOption: .restBetweenSets, fromSetWorkoutViewModel: notDefaultWorkout)
+        // When tapped twice
+        prepareTimeItem.onTappedTwice()
+        workTime.onTappedTwice()
+        restBetweenCycles.onTappedTwice()
+        cycles.onTappedTwice()
+        sets.onTappedTwice()
+        restBetweenSets.onTappedTwice()
+        // Then the value updates to default value
+        XCTAssertEqual(notDefaultWorkout.prepareTime, defaultWorkout.prepareTime)
+        XCTAssertEqual(notDefaultWorkout.workTime, defaultWorkout.workTime)
+        XCTAssertEqual(notDefaultWorkout.restBetweenCycles, defaultWorkout.restBetweenCycles)
+        XCTAssertEqual(notDefaultWorkout.cycles, defaultWorkout.cycles)
+        XCTAssertEqual(notDefaultWorkout.sets, defaultWorkout.sets)
+        XCTAssertEqual(notDefaultWorkout.restBetweenSets, defaultWorkout.restBetweenSets)
+    }
 }
