@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct SetWorkoutView: View {
+    
+    @StateObject var setWorkoutViewModel: SetWorkoutViewModel
+    
     var body: some View {
-        Text("SetWorkout view")
+        VStack {
+           WorkoutView(setWorkoutViewModel: setWorkoutViewModel)
+        }
+
     }
 }
 
 struct SetWorkoutView_Previews: PreviewProvider {
     static var previews: some View {
-        SetWorkoutView()
+        SetWorkoutView(setWorkoutViewModel: PreviewWorkoutViewModels.defaultWorkout())
     }
 }
