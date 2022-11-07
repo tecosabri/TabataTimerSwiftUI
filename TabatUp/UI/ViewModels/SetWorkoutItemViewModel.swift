@@ -82,16 +82,15 @@ final class SetWorkoutItemViewModel: ObservableObject {
         if offSet > 0 {
             if lastDragValueHeight > offSet { itemValue = String(intItemValue + 1) } // Dragging down-up
             if lastDragValueHeight < offSet { itemValue = String(intItemValue - 1) } // Dragging down-down
-            // Keep value from being negative
-            itemValue = intItemValue - 1 < 0 ? "0" : itemValue
+            itemValue = intItemValue - 1 < 0 ? "0" : itemValue // Keep value from being negative
+
         }
         // When dragging up
         else if offSet < 0 {
             if lastDragValueHeight > offSet { itemValue = String(intItemValue + 1) } // Dragging up-up
             if lastDragValueHeight < offSet { // Dragging up-down
                 itemValue = String(intItemValue - 1)
-                // Keep value from being negative
-                itemValue = intItemValue - 1 < 0 ? "0" : itemValue
+                itemValue = intItemValue - 1 < 0 ? "0" : itemValue // Keep value from being negative
             }
         }
 
