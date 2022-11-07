@@ -109,6 +109,17 @@ final class SetWorkoutItemViewModelTests: XCTestCase {
         XCTAssertEqual(cyclesSut.itemValue, "2")
     }
     
+    func test_onDraggedWithOffSet_whenDraggedUpWithOddOffSet_valueRemainsTheSame() {
+        // Given a prepare time item with value 30 that has not been dragged
+        let thirtySecondsPrepareTimeWorkout = SetWorkoutViewModel.fixture(prepareTime: 30)
+        let sut = SetWorkoutItemViewModel.fixture(workoutOption: .prepareTime, setWorkoutViewModel: thirtySecondsPrepareTimeWorkout)
+        sut.lastDragValueHeight = 0
+        // When dragged up (height approaches to coordinate 0)
+        sut.onDraggedWith(offSet: -1)
+        // Then the value gets incremented
+        XCTAssertEqual(sut.itemValue, "30")
+    }
+    
     func test_onDraggedWithOffSet_whenDraggedUp_valueGetsIncremented() {
         // Given a prepare time item with value 30 that has not been dragged
         let thirtySecondsPrepareTimeWorkout = SetWorkoutViewModel.fixture(prepareTime: 30)
@@ -160,6 +171,29 @@ final class SetWorkoutItemViewModelTests: XCTestCase {
         sutWorkTime.onDraggedWith(offSet: 2)
         sutRestBetweenCycles.onDraggedWith(offSet: 2)
         sutRestBetweenSets.onDraggedWith(offSet: 2)
+        // Then the value remains the same
+        XCTAssertEqual(sutPrepareTime.itemValue, "0")
+        XCTAssertEqual(sutWorkTime.itemValue, "0")
+        XCTAssertEqual(sutRestBetweenCycles.itemValue, "0")
+        XCTAssertEqual(sutRestBetweenSets.itemValue, "0")
+    }
+    
+    func test_onDraggedWithOffSet_whenDraggedUpDownWithValue0_valueRemainsTheSame() {
+        // Given a workout with all its properties zeroed
+        let randomWorkout = SetWorkoutViewModel.fixture(prepareTime: 0, workTime: 0, restBetweenCycles: 0, restBetweenSets: 0)
+        let sutPrepareTime = SetWorkoutItemViewModel(workoutOption: .prepareTime, fromSetWorkoutViewModel: randomWorkout)
+        let sutWorkTime = SetWorkoutItemViewModel(workoutOption: .workTime, fromSetWorkoutViewModel: randomWorkout)
+        let sutRestBetweenCycles = SetWorkoutItemViewModel(workoutOption: .restBetweenCycles, fromSetWorkoutViewModel: randomWorkout)
+        let sutRestBetweenSets = SetWorkoutItemViewModel(workoutOption: .restBetweenSets, fromSetWorkoutViewModel: randomWorkout)
+        sutPrepareTime.lastDragValueHeight = -4
+        sutWorkTime.lastDragValueHeight = -4
+        sutRestBetweenCycles.lastDragValueHeight = -4
+        sutRestBetweenSets.lastDragValueHeight = -4
+        // When dragged down
+        sutPrepareTime.onDraggedWith(offSet: -2)
+        sutWorkTime.onDraggedWith(offSet: -2)
+        sutRestBetweenCycles.onDraggedWith(offSet: -2)
+        sutRestBetweenSets.onDraggedWith(offSet: -2)
         // Then the value remains the same
         XCTAssertEqual(sutPrepareTime.itemValue, "0")
         XCTAssertEqual(sutWorkTime.itemValue, "0")
