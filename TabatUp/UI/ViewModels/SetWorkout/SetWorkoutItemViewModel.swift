@@ -5,7 +5,7 @@
 //  Created by Ismael Sabri Pérez on 28/10/22.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 
 final class SetWorkoutItemViewModel: ObservableObject {
@@ -19,6 +19,8 @@ final class SetWorkoutItemViewModel: ObservableObject {
     let option: SetWorkoutOption
     /// The last height value of the drag gesture
     var lastDragValueHeight: CGFloat = 0
+    /// Indicates if the item has been tapped once.
+    var isTapped = false
     
     // MARK: - Lifecycle
     /// Creates a set workout item view model from the view model for the setting option passed as parameter.
@@ -150,5 +152,11 @@ final class SetWorkoutItemViewModel: ObservableObject {
         }
         
         updateSetWorkoutViewModel()
+    }
+    
+    /// Sets isTapped to true and updates de currently modified item in the set workout view model.
+    func onTappedOnce() {
+        isTapped = true
+        setWorkoutViewModel.currentlyModifiedItem = [option : itemValue]
     }
 }

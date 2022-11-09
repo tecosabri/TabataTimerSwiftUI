@@ -53,4 +53,15 @@ final class SetWorkoutViewModel: ObservableObject {
         items[.sets] = SetWorkoutItemViewModel(workoutOption: .sets, fromSetWorkoutViewModel: self)
         items[.restBetweenSets] = SetWorkoutItemViewModel(workoutOption: .restBetweenSets, fromSetWorkoutViewModel: self)
     }
+    
+    
+    /// Indicates wheter the currently modified item has been tapped once.
+    /// - Returns: True if the currently modified item has been tapped once, false otherwise.
+    func currentlyModifiedItemIsTapped() -> Bool {
+        guard let currentlyModifiedItem = currentlyModifiedItem else { return false }
+        let items = items.filter { $0.key == currentlyModifiedItem.keys.first }
+        guard let item = items.values.first else { return false }
+        if item.isTapped { return true }
+        else { return false }
+    }
 }

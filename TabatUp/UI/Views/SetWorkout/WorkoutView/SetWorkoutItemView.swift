@@ -20,17 +20,16 @@ struct SetWorkoutItemView: View {
                     .font(.caption2)
                     .bold()
                     .fixedSize()
-                
                 Spacer()
                 Text(setWorkoutItem.itemValue)
                     .bold()
             }
-            .padding()
             .overlay(
                 Circle()
                     .stroke(lineWidth: 2)
                     .frame(width: size, height: size)
             )
+            .padding()
             .frame(width: size, height: size)
             .zIndex(1)
         }
@@ -44,6 +43,9 @@ struct SetWorkoutItemView: View {
         )
         .onTapGesture(count: 2) {
             setWorkoutItem.onTappedTwice()
+        }
+        .onTapGesture { // Must be after onTapGesture(count: 2)
+            setWorkoutItem.onTappedOnce()
         }
     }
 }

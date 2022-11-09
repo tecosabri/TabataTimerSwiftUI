@@ -14,14 +14,19 @@ struct WorkoutView: View {
     
     var body: some View {
         VStack {
-            Text("Customize your workout!")
-                .bold()
-                .font(.title)
-            ZStack {
+            if !setWorkoutViewModel.currentlyModifiedItemIsTapped() {
+                Text("Customize your workout!")
+                    .bold()
+                    .font(.title)
+            }
+            ZStack (alignment: .center){
                 // Set the title on the center
-                Text(setWorkoutViewModel.title)
+                TextField("Title", text: $setWorkoutViewModel.title)
                     .bold()
                     .font(.title2)
+                    .multilineTextAlignment(.center)
+                    .disableAutocorrection(true)
+                    .frame(width: UIScreen.screenWidth / 2 * 0.7)
                 // Set a circular layout around the title
                 CircularLayoutView(setWorkoutViewModel: setWorkoutViewModel) {
                     // Prepare time. Force unwrap as items are already set
@@ -52,6 +57,11 @@ struct WorkoutView: View {
                             .font(.title)
                     }
                 }
+            }
+            if(setWorkoutViewModel.currentlyModifiedItemIsTapped()) {
+                let workout = PreviewWorkoutViewModels.defaultWorkout()
+                NumPadView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .restBetweenCycles, fromSetWorkoutViewModel: workout))
+                    .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight / 2)
             }
         }
     }
