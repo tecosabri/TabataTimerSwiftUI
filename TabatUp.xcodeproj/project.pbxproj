@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87128CF8291CFE8B004845EF /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87128CF7291CFE8B004845EF /* CustomButton.swift */; };
+		87128CFA291CFED9004845EF /* NumPadSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87128CF9291CFED9004845EF /* NumPadSymbol.swift */; };
 		873C0205291C219E008E3FAB /* NumPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C0204291C219E008E3FAB /* NumPadView.swift */; };
 		873C0207291C21AC008E3FAB /* NumButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C0206291C21AC008E3FAB /* NumButtonView.swift */; };
 		873C020A291C23B9008E3FAB /* NumPadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C0209291C23B9008E3FAB /* NumPadViewModel.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		87128CF7291CFE8B004845EF /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		87128CF9291CFED9004845EF /* NumPadSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumPadSymbol.swift; sourceTree = "<group>"; };
 		873C0204291C219E008E3FAB /* NumPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumPadView.swift; sourceTree = "<group>"; };
 		873C0206291C21AC008E3FAB /* NumButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumButtonView.swift; sourceTree = "<group>"; };
 		873C0209291C23B9008E3FAB /* NumPadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumPadViewModel.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 			children = (
 				873C0204291C219E008E3FAB /* NumPadView.swift */,
 				873C0206291C21AC008E3FAB /* NumButtonView.swift */,
+				87128CF7291CFE8B004845EF /* CustomButton.swift */,
 			);
 			path = NumpadView;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 				876E1FA2290A7DA500041F19 /* Status.swift */,
 				8742F06B290BB91B00EA5BF4 /* SetWorkoutModel.swift */,
 				8742F08B290BD6B400EA5BF4 /* SetWorkoutOption.swift */,
+				87128CF9291CFED9004845EF /* NumPadSymbol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -402,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87128CFA291CFED9004845EF /* NumPadSymbol.swift in Sources */,
 				8742F08A290BD41E00EA5BF4 /* SetWorkoutItemView.swift in Sources */,
 				874DE29529103EC400940912 /* UIScreenExtension.swift in Sources */,
 				876EAA362906B88D006B567B /* TabatUpApp.swift in Sources */,
@@ -419,6 +426,7 @@
 				876EAA6F2906FF31006B567B /* HomeView.swift in Sources */,
 				876E1FA1290A7D2900041F19 /* RootViewModel.swift in Sources */,
 				878D32F7290BB1970073D5A7 /* TimerView.swift in Sources */,
+				87128CF8291CFE8B004845EF /* CustomButton.swift in Sources */,
 				876E1F9F290A7D0E00041F19 /* RootView.swift in Sources */,
 				87F2C8C329128C2100FC0CFB /* StringExtension.swift in Sources */,
 				873C0207291C21AC008E3FAB /* NumButtonView.swift in Sources */,

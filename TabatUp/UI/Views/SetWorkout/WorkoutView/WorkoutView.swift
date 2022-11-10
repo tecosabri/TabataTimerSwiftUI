@@ -61,7 +61,8 @@ struct WorkoutView: View {
             if(setWorkoutViewModel.currentlyModifiedItemIsTapped()) {
                 let workout = PreviewWorkoutViewModels.defaultWorkout()
                 NumPadView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .restBetweenCycles, fromSetWorkoutViewModel: workout))
-                    .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight / 2)
+                    .frame(width: UIScreen.screenWidth)
+                    .padding(20)
             }
         }
     }

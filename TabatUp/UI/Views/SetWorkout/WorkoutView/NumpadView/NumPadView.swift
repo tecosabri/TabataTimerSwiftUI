@@ -13,7 +13,7 @@ struct NumPadView: View {
     
     var body: some View {
         
-        Grid (alignment: .bottom, horizontalSpacing: 20, verticalSpacing: 20) {
+        Grid (alignment: .center, horizontalSpacing: 10, verticalSpacing: 10) {
             Text("\(setWorkoutItem.option.rawValue): \(setWorkoutItem.itemValue)")
                 .bold()
                 .font(.title)
@@ -22,16 +22,19 @@ struct NumPadView: View {
                 NumButtonView(number: 1)
                 NumButtonView(number: 2)
                 NumButtonView(number: 3)
+                NumButtonView(number: 0)
             }
             GridRow {
                 NumButtonView(number: 4)
                 NumButtonView(number: 5)
                 NumButtonView(number: 6)
+                CustomButton(numpadSymbol: .deleteArrow)
             }
             GridRow {
                 NumButtonView(number: 7)
                 NumButtonView(number: 8)
                 NumButtonView(number: 9)
+                CustomButton(numpadSymbol: .done)
             }
         }
     }
