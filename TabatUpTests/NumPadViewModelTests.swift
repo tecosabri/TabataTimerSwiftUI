@@ -54,8 +54,7 @@ final class NumPadViewModelTests: XCTestCase {
         numPadViewModel.add(number: .six)
         numPadViewModel.add(number: .zero)
         numPadViewModel.add(number: .zero)
-        // Th
-        // Then zero gets removed
+        // Then value is 3599 seconds
         XCTAssertEqual(numPadViewModel.value, "3599")
     }
     
@@ -63,15 +62,74 @@ final class NumPadViewModelTests: XCTestCase {
         // Given a numpad view model
         let numPadViewModel = NumPadViewModel(setWorkoutOption: .sets)
         XCTAssertEqual(numPadViewModel.value, "")
-        // When added 3600 seconds
+        // When added 100 rounds
         numPadViewModel.add(number: .one)
         numPadViewModel.add(number: .zero)
         numPadViewModel.add(number: .zero)
-        // Th
-        // Then zero gets removed
+        // Then value is 99 rounds
         XCTAssertEqual(numPadViewModel.value, "99")
     }
     
     // MARK: - deleteNumber
+    func test_deleteNumber_whenPressedAndValueContainsANumber_deletesNumber() {
+        // Given a numpad view model with 80 sets
+        let numPadViewModel = NumPadViewModel(setWorkoutOption: .sets)
+        XCTAssertEqual(numPadViewModel.value, "")
+        numPadViewModel.add(number: .eight)
+        numPadViewModel.add(number: .zero)
+        // When deleted number
+        numPadViewModel.deleteNumber()
+        // Then the value is 8
+        XCTAssertEqual(numPadViewModel.value, "8")
+    }
+    
+    func test_deleteNumber_whenPressedAndValueContainsZero_deletesZeroAndGetsEmptyValue() {
+        // Given a numpad view model with empty value
+        let numPadViewModel = NumPadViewModel(setWorkoutOption: .sets)
+        XCTAssertEqual(numPadViewModel.value, "")
+        numPadViewModel.add(number: .zero)
+        XCTAssertEqual(numPadViewModel.value, "0")
+        // When deleted number
+        numPadViewModel.deleteNumber()
+        // Then the value is empty
+        XCTAssertEqual(numPadViewModel.value, "")
+    }
+    
+    func test_deleteNumber_whenPressedAndValueIsEmpty_doesNothing() {
+        // Given a numpad view model with empty value
+        let numPadViewModel = NumPadViewModel(setWorkoutOption: .sets)
+        XCTAssertEqual(numPadViewModel.value, "")
+        // When deleted number
+        numPadViewModel.deleteNumber()
+        // Then the value is still empty
+        XCTAssertEqual(numPadViewModel.value, "")
+    }
+    
+    // MARK: - onDone
+    func test_onDoneUpdateItem_whenPressedWithEmptyValue_itemValueUpdatesTo0() {
+        // Given a numpad view model with empty value and a random item
+        let numPadViewModel = NumPadViewModel(setWorkoutOption: .sets)
+        XCTAssertEqual(numPadViewModel.value, "")
+        let item = SetWorkoutItemViewModel.fixture(workoutOption: .sets)
+        // When the onDone
+        numPadViewModel.onDone(updateItem: item)
+        // Item value is 0
+        XCTAssertEqual(item.itemValue, "0")
+    }
+    
+    func test_onDoneUpdateItem_whenPressedWithValue_itemValueUpdates() {
+        // Given a numpad view model with 579 seconds
+        let numPadViewModel = NumPadViewModel(setWorkoutOption: .prepareTime)
+        XCTAssertEqual(numPadViewModel.value, "")
+        let item = SetWorkoutItemViewModel.fixture(workoutOption: .prepareTime)
+        numPadViewModel.add(number: .five)
+        numPadViewModel.add(number: .seven)
+        numPadViewModel.add(number: .nine)
+        XCTAssertEqual(numPadViewModel.value, "579")
+        // When the onDone
+        numPadViewModel.onDone(updateItem: item)
+        // Item value is 0
+        XCTAssertEqual(item.itemValue, "579")
+    }
     
 }

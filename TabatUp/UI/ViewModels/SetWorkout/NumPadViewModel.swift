@@ -61,20 +61,39 @@ class NumPadViewModel: ObservableObject{
     /// Sets time values to maximum 3599 seconds and rounds to 99.
     private func checkMaxValue() {
         guard let value = Int(value) else { return }
-        let valueIsRounds = isInRounds() 
+        let valueIsRounds = isInRounds()
         if !valueIsRounds { self.value = Int(value) > 3599 ? "3599" : self.value } // Set max value for time value
         if valueIsRounds { self.value = Int(value) > 99 ? "99" : self.value } // Set max value for rounds value
     }
     
     /// Indicates whether the value is in rounds or in time.
     ///  - Returns: True if the value is in rounds.
-    func isInRounds() -> Bool {
+    private func isInRounds() -> Bool {
         switch setWorkoutOption {
         case .cycles, .sets:
             return true
         case .title, .prepareTime, .workTime, .restBetweenCycles, .restBetweenSets:
             return false
         }
+    }
+    
+    // MARK: - Delete function
+    /// Deletes the last number of the value, doing nothing if the value is empty.
+    func deleteNumber() {
+        guard Int(value) != nil else { return } // Does nothing when empty value
+        value.removeLast()
+    }
+    
+    // MARK: - onDone function
+    /// Updates the value of the item with the value set by this number pad, being 0 if empty value.
+    func onDone(updateItem item: SetWorkoutItemViewModel) {
+        // If empty value, set to 0 item value
+        guard Int(value) != nil else {
+            item.itemValue = "0"
+            return
+        }
+        
+        item.itemValue = value
     }
     
 }

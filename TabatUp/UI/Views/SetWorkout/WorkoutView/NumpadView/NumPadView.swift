@@ -34,13 +34,13 @@ struct NumPadView: View {
                 NumButtonView(number: .four).onTapGesture { numPadViewModel.add(number: .four) }
                 NumButtonView(number: .five).onTapGesture { numPadViewModel.add(number: .five) }
                 NumButtonView(number: .six).onTapGesture { numPadViewModel.add(number: .six) }
-                CustomButton(numpadSymbol: .deleteArrow)
+                CustomButton(numpadSymbol: .deleteArrow).onTapGesture { numPadViewModel.deleteNumber() }
             }
             GridRow {
                 NumButtonView(number: .seven).onTapGesture { numPadViewModel.add(number: .seven) }
                 NumButtonView(number: .eight).onTapGesture { numPadViewModel.add(number: .eight) }
                 NumButtonView(number: .nine).onTapGesture { numPadViewModel.add(number: .nine) }
-                CustomButton(numpadSymbol: .done)
+                CustomButton(numpadSymbol: .done).onTapGesture { numPadViewModel.onDone(updateItem: setWorkoutItem) }
             }
         }
     }
