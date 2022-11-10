@@ -49,10 +49,10 @@ struct WorkoutView: View {
                     
                     // Currently modified value appears when any of the items is modified
                     FadeOutVStack(setWorkoutViewModel: setWorkoutViewModel) {
-                        Text(setWorkoutViewModel.currentlyModifiedItem?.first?.key.rawValue ?? "")
+                        Text(setWorkoutViewModel.currentlyModifiedItem?.option.rawValue ?? "")
                             .bold()
                             .font(.caption)
-                        Text(setWorkoutViewModel.currentlyModifiedItem?.values.first ?? "")
+                        Text(setWorkoutViewModel.currentlyModifiedItem?.itemValue ?? "")
                             .bold()
                             .font(.title)
                     }

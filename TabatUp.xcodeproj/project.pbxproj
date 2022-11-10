@@ -10,6 +10,7 @@
 		873C0205291C219E008E3FAB /* NumPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C0204291C219E008E3FAB /* NumPadView.swift */; };
 		873C0207291C21AC008E3FAB /* NumButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C0206291C21AC008E3FAB /* NumButtonView.swift */; };
 		873C020A291C23B9008E3FAB /* NumPadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C0209291C23B9008E3FAB /* NumPadViewModel.swift */; };
+		873C020C291C5B18008E3FAB /* SetWorkoutViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C020B291C5B18008E3FAB /* SetWorkoutViewModelTests.swift */; };
 		8742F06C290BB91B00EA5BF4 /* SetWorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742F06B290BB91B00EA5BF4 /* SetWorkoutModel.swift */; };
 		8742F07D290BC88B00EA5BF4 /* SetWorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742F07C290BC88B00EA5BF4 /* SetWorkoutViewModel.swift */; };
 		8742F084290BD27900EA5BF4 /* SetWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878D32F2290BB1800073D5A7 /* SetWorkoutView.swift */; };
@@ -50,6 +51,7 @@
 		873C0204291C219E008E3FAB /* NumPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumPadView.swift; sourceTree = "<group>"; };
 		873C0206291C21AC008E3FAB /* NumButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumButtonView.swift; sourceTree = "<group>"; };
 		873C0209291C23B9008E3FAB /* NumPadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumPadViewModel.swift; sourceTree = "<group>"; };
+		873C020B291C5B18008E3FAB /* SetWorkoutViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutViewModelTests.swift; sourceTree = "<group>"; };
 		8742F06B290BB91B00EA5BF4 /* SetWorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutModel.swift; sourceTree = "<group>"; };
 		8742F07C290BC88B00EA5BF4 /* SetWorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutViewModel.swift; sourceTree = "<group>"; };
 		8742F089290BD41E00EA5BF4 /* SetWorkoutItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutItemView.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				87AB151D2912E29600721ABF /* SetWorkoutViewModelFixture.swift */,
+				873C020B291C5B18008E3FAB /* SetWorkoutViewModelTests.swift */,
 				87AB151F2912E2A900721ABF /* SetWorkoutItemViewModelFixture.swift */,
 				87AB15212912E38A00721ABF /* SetWorkoutItemViewModelTests.swift */,
 			);
@@ -431,6 +434,7 @@
 				87AB151E2912E29600721ABF /* SetWorkoutViewModelFixture.swift in Sources */,
 				87AB15222912E38A00721ABF /* SetWorkoutItemViewModelTests.swift in Sources */,
 				87AB15202912E2A900721ABF /* SetWorkoutItemViewModelFixture.swift in Sources */,
+				873C020C291C5B18008E3FAB /* SetWorkoutViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

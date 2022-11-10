@@ -9,10 +9,9 @@ import SwiftUI
 import Combine
 
 final class SetWorkoutItemViewModel: ObservableObject {
-    
     // MARK: - Properties
     /// The value of the item.
-    @Published var itemValue: String
+    @Published var itemValue: String {didSet {updateSetWorkoutViewModel()}}
     /// The workout view model that generates this item
     let setWorkoutViewModel: SetWorkoutViewModel
     /// The option to be set for workout.
@@ -71,7 +70,7 @@ final class SetWorkoutItemViewModel: ObservableObject {
         }
     }
     
-    /// Applies the offset to the value stored by this model.
+    /// Applies the offset to the value stored by this item and updates its set workout view model.
     /// - Parameter offSet: The positive or negative offset being applied by a dragging event.
     func onDraggedWith(offSet: CGFloat) {
         
@@ -98,11 +97,9 @@ final class SetWorkoutItemViewModel: ObservableObject {
 
         // Remember the last offset to know if dragged up-down, up-up, down-up or down-down
         lastDragValueHeight = offSet
-        // Update the view model for item value to be persisted
-        updateSetWorkoutViewModel()
     }
     
-    /// Increments or decrements by one the value depending on the offset, being incremented if the offset is negative and decremented if positive.
+    /// Increments or decrements by one the value depending on the offset, being incremented if the offset is negative and decremented if positive. It also updates its set workout view model.
     /// - Parameter offSet: The positive or negative offset being applied by a dragging event-
     func onDragEndedWith(offSet: CGFloat) {
         
@@ -117,12 +114,9 @@ final class SetWorkoutItemViewModel: ObservableObject {
             // Keep value from being negative
             itemValue = intItemValue - 1 < 0 ? "0" : itemValue
         }
-        
-        // Update the view model for item value to be persisted
-        updateSetWorkoutViewModel()
     }
     
-    /// Updates the value of the item to its default value.
+    /// Updates the value of the item to its default value, updating the set workout model value.
     ///
     /// The default values are the following:
     /// - Title: "Default"
@@ -150,13 +144,20 @@ final class SetWorkoutItemViewModel: ObservableObject {
         case .sets:
             itemValue = defaultViewModel.sets
         }
-        
-        updateSetWorkoutViewModel()
     }
     
     /// Sets isTapped to true and updates de currently modified item in the set workout view model.
     func onTappedOnce() {
         isTapped = true
-        setWorkoutViewModel.currentlyModifiedItem = [option : itemValue]
+        setWorkoutViewModel.currentlyModifiedItem = self
+    }
+}
+
+
+// MARK: - Extension equatable protocol
+extension SetWorkoutItemViewModel: Equatable {
+    static func == (lhs: SetWorkoutItemViewModel, rhs: SetWorkoutItemViewModel) -> Bool {
+        lhs.itemValue == rhs.itemValue &&
+        lhs.option == rhs.option
     }
 }
