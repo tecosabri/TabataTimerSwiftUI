@@ -10,30 +10,36 @@ import SwiftUI
 struct NumPadView: View {
     
     @ObservedObject var setWorkoutItem: SetWorkoutItemViewModel
+    @ObservedObject var numPadViewModel: NumPadViewModel
+    
+    init(setWorkoutItem: SetWorkoutItemViewModel, numPadViewModel: NumPadViewModel) {
+        self.setWorkoutItem = setWorkoutItem
+        self.numPadViewModel = NumPadViewModel(setWorkoutOption: setWorkoutItem.option)
+    }
     
     var body: some View {
         
         Grid (alignment: .center, horizontalSpacing: 10, verticalSpacing: 10) {
-            Text("\(setWorkoutItem.option.rawValue): \(setWorkoutItem.itemValue)")
+            Text("\(setWorkoutItem.option.rawValue): \(numPadViewModel.value)")
                 .bold()
-                .font(.title)
+                .font(.title2)
                 
             GridRow {
-                NumButtonView(number: 1)
-                NumButtonView(number: 2)
-                NumButtonView(number: 3)
-                NumButtonView(number: 0)
+                NumButtonView(number: .one).onTapGesture { numPadViewModel.add(number: .one) }
+                NumButtonView(number: .two).onTapGesture { numPadViewModel.add(number: .two) }
+                NumButtonView(number: .three).onTapGesture { numPadViewModel.add(number: .three) }
+                NumButtonView(number: .zero).onTapGesture { numPadViewModel.add(number: .zero) }
             }
             GridRow {
-                NumButtonView(number: 4)
-                NumButtonView(number: 5)
-                NumButtonView(number: 6)
+                NumButtonView(number: .four).onTapGesture { numPadViewModel.add(number: .four) }
+                NumButtonView(number: .five).onTapGesture { numPadViewModel.add(number: .five) }
+                NumButtonView(number: .six).onTapGesture { numPadViewModel.add(number: .six) }
                 CustomButton(numpadSymbol: .deleteArrow)
             }
             GridRow {
-                NumButtonView(number: 7)
-                NumButtonView(number: 8)
-                NumButtonView(number: 9)
+                NumButtonView(number: .seven).onTapGesture { numPadViewModel.add(number: .seven) }
+                NumButtonView(number: .eight).onTapGesture { numPadViewModel.add(number: .eight) }
+                NumButtonView(number: .nine).onTapGesture { numPadViewModel.add(number: .nine) }
                 CustomButton(numpadSymbol: .done)
             }
         }
@@ -43,6 +49,9 @@ struct NumPadView: View {
 struct NumPadView_Previews: PreviewProvider {
     static var previews: some View {
         let workout = PreviewWorkoutViewModels.defaultWorkout()
-        NumPadView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .restBetweenCycles, fromSetWorkoutViewModel: workout))
+        let setWorkoutItemViewModel = SetWorkoutItemViewModel(workoutOption: .restBetweenCycles, fromSetWorkoutViewModel: workout)
+        let numPadViewModel = NumPadViewModel(setWorkoutOption: setWorkoutItemViewModel.option)
+        
+        NumPadView(setWorkoutItem: setWorkoutItemViewModel, numPadViewModel: numPadViewModel)
     }
 }

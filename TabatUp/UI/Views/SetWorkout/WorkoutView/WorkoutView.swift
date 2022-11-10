@@ -59,10 +59,9 @@ struct WorkoutView: View {
                 }
             }
             if(setWorkoutViewModel.currentlyModifiedItemIsTapped()) {
-                let workout = PreviewWorkoutViewModels.defaultWorkout()
-                NumPadView(setWorkoutItem: SetWorkoutItemViewModel(workoutOption: .restBetweenCycles, fromSetWorkoutViewModel: workout))
+                NumPadView(setWorkoutItem: setWorkoutViewModel.currentlyModifiedItem!, numPadViewModel: NumPadViewModel(setWorkoutOption: setWorkoutViewModel.currentlyModifiedItem!.option)) // ! as currentlyModifiedItemIsTapped checks null
                     .frame(width: UIScreen.screenWidth)
-                    .padding(20)
+                    .padding(.bottom, 40)
             }
         }
     }

@@ -8,7 +8,7 @@ import SwiftUI
 
 struct CustomButton: View {
     
-    let size: CGFloat = 60
+    let size: CGFloat = 50
     var numpadSymbol: NumPadSymbol
     
     var body: some View {

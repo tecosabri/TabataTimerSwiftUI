@@ -9,11 +9,11 @@ import SwiftUI
 
 struct NumButtonView: View {
     
-    let size: CGFloat = 60
-    var number: Int
+    let size: CGFloat = 50
+    var number: Number
     
     var body: some View {
-        Text("\(number)")
+        Text("\(number.rawValue)")
             .bold()
             .font(.title)
             .overlay(
@@ -27,6 +27,6 @@ struct NumButtonView: View {
 
 struct NumButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        NumButtonView(number: 8)
+        NumButtonView(number: .eight)
     }
 }
