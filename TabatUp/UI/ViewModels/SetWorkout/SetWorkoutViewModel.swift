@@ -12,7 +12,7 @@ import Combine
 final class SetWorkoutViewModel: ObservableObject {
     // MARK: - Properties
     /// The title of the workout.
-    @Published var title: String
+    @Published var title: String {didSet{ manageSettingTitle(withOldValue: oldValue)}}
     /// The time to prepare before the whole workout starts.
     @Published var prepareTime: String {didSet{currentlyModifiedItem = items[.prepareTime]!}}
     /// The round workout time.
@@ -59,5 +59,10 @@ final class SetWorkoutViewModel: ObservableObject {
         guard let currentlyModifiedItem,
               currentlyModifiedItem.isTapped else { return false }
         return true
+    }
+    
+    func manageSettingTitle(withOldValue oldValue: String) {
+        if title.last == "\n" { return }
+        if title.count > 25 { title = oldValue }
     }
 }

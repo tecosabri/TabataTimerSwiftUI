@@ -86,7 +86,10 @@ class NumPadViewModel: ObservableObject{
     
     // MARK: - onDone function
     /// Updates the value of the item with the value set by this number pad, being 0 if empty value.
+    ///
+    /// It sets the isTapped property of the item to false, as it is done with updating.
     func onDone(updateItem item: SetWorkoutItemViewModel) {
+        item.isTapped.toggle()
         // If empty value, set to 0 item value
         guard Int(value) != nil else {
             item.itemValue = "0"

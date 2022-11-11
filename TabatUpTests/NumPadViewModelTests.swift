@@ -132,4 +132,19 @@ final class NumPadViewModelTests: XCTestCase {
         XCTAssertEqual(item.itemValue, "579")
     }
     
+    func test_onDoneUpdateItem_whenPressed_getsUntapped() {
+        // Given a numpad view model with 5 seconds and tapped
+        let numPadViewModel = NumPadViewModel(setWorkoutOption: .prepareTime)
+        XCTAssertEqual(numPadViewModel.value, "")
+        let item = SetWorkoutItemViewModel.fixture(workoutOption: .prepareTime)
+        item.onTappedOnce()
+        numPadViewModel.add(number: .five)
+        XCTAssertEqual(numPadViewModel.value, "5")
+        // When the onDone
+        numPadViewModel.onDone(updateItem: item)
+        // Item is not tapped
+        XCTAssertEqual(item.isTapped, false)
+        
+    }
+    
 }

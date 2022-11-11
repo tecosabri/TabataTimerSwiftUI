@@ -21,12 +21,22 @@ struct WorkoutView: View {
             }
             ZStack (alignment: .center){
                 // Set the title on the center
-                TextField("Title", text: $setWorkoutViewModel.title)
+                TextField("Workout title", text: $setWorkoutViewModel.title, axis: .vertical)
+                    .lineLimit(3)
+                    .frame(width: UIScreen.screenWidth / 2 * 0.7)
                     .bold()
                     .font(.title2)
                     .multilineTextAlignment(.center)
                     .disableAutocorrection(true)
-                    .frame(width: UIScreen.screenWidth / 2 * 0.7)
+                    .onChange(of: setWorkoutViewModel.title) { newValue in
+                        guard let lastChar = newValue.last else { return }
+                        if lastChar == "\n" {
+                            setWorkoutViewModel.title.removeLast()
+                            hideKeyboard()
+                        }
+                    }
+                    
+
                 // Set a circular layout around the title
                 CircularLayoutView(setWorkoutViewModel: setWorkoutViewModel) {
                     // Prepare time. Force unwrap as items are already set
