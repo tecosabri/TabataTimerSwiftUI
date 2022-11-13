@@ -84,6 +84,7 @@ final class SetWorkoutItemViewModel: ObservableObject {
         case .sets, .cycles:
             if intValue > 99 { itemValue = "99"}
         }
+        if intValue < 0 { itemValue = "0"}
     }
     
     /// Applies the offset to the value stored by this item and updates its set workout view model.
@@ -99,16 +100,11 @@ final class SetWorkoutItemViewModel: ObservableObject {
         if offSet > 0 {
             if lastDragValueHeight > offSet { itemValue = String(intItemValue + 1) } // Dragging down-up
             if lastDragValueHeight < offSet { itemValue = String(intItemValue - 1) } // Dragging down-down
-            itemValue = intItemValue - 1 < 0 ? "0" : itemValue // Keep value from being negative
-
         }
         // When dragging up
         else if offSet < 0 {
             if lastDragValueHeight > offSet { itemValue = String(intItemValue + 1) } // Dragging up-up
-            if lastDragValueHeight < offSet { // Dragging up-down
-                itemValue = String(intItemValue - 1)
-                itemValue = intItemValue - 1 < 0 ? "0" : itemValue // Keep value from being negative
-            }
+            if lastDragValueHeight < offSet { itemValue = String(intItemValue - 1)} // Dragging up-down
         }
 
         // Remember the last offset to know if dragged up-down, up-up, down-up or down-down
@@ -125,11 +121,7 @@ final class SetWorkoutItemViewModel: ObservableObject {
         // When dragged up, increment value
         if offSet < 0 { itemValue = String(intItemValue + 1) }
         // When dragged down, decrement value
-        if offSet > 0 {
-            itemValue = String(intItemValue - 1)
-            // Keep value from being negative
-            itemValue = intItemValue - 1 < 0 ? "0" : itemValue
-        }
+        if offSet > 0 { itemValue = String(intItemValue - 1) }
     }
     
     /// Updates the value of the item to its default value, updating the set workout model value.
