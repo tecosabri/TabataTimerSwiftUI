@@ -74,5 +74,55 @@ final class SetWorkoutViewModelTests: XCTestCase {
         // Then
         XCTAssertFalse(isTapped)
     }
+    
+    func test_currentlyModifiedItemIsTapped_whenTapOnCurrentlyModifiedItem_returnsTrue() {
+        // Given a currently modified set but not tapped
+        let setWorkoutViewModel = SetWorkoutViewModel.fixture(title: "Title", prepareTime: 1, workTime: 1, restBetweenCycles: 1, cycles: 1, sets: 1, restBetweenSets: 1)
+        setWorkoutViewModel.items[.prepareTime]?.itemValue = "5"
+        // When
+        setWorkoutViewModel.currentlyModifiedItem?.onTappedOnce()
+        let isTapped = setWorkoutViewModel.currentlyModifiedItemIsTapped()
+        // Then
+        XCTAssertTrue(isTapped)
+    }
+    
+    // MARK: - manageSettingTitle(withOldValue:)
+    func test_manageSettingTitleWithOldValue_whenTitleIsShorterThan25Chars_titleGetsModified() {
+        // Given a set workout view model with default title value
+        let setWorkoutViewModel = SetWorkoutViewModel.fixture(title: "Default")
+        XCTAssertEqual(setWorkoutViewModel.title, "Default")
+        let oldValue = "Defaul"
+        // When called manage setting title
+        setWorkoutViewModel.manageSettingTitle(withOldValue: oldValue)
+        // Then nothing happens
+        XCTAssertEqual(setWorkoutViewModel.title, "Default")
+    }
+    
+    func test_manageSettingTitleWithOldValue_whenTitleGetsLongerThan25Chars_titleEqualsOldValue() {
+        // Given a set workout view model with default title value
+        let setWorkoutViewModel = SetWorkoutViewModel.fixture(title: "Thistitleislongerthan25characterslong")
+        XCTAssertEqual(setWorkoutViewModel.title, "Thistitleislongerthan25characterslong")
+        let oldValue = "oldvalue"
+        // When called manage setting title
+        setWorkoutViewModel.manageSettingTitle(withOldValue: oldValue)
+        // Then nothing happens
+        XCTAssertEqual(setWorkoutViewModel.title, oldValue)
+    }
+    
+    func test_manageSettingTitleWithOldValue_whenTitleIsShorterThan25CharsButGetsEndedWithNewLine_titleGetsModified() {
+        // Given a set workout view model with default title value
+        let title = """
+                        TitleShorterThan25
+                        
+                        """
+        let setWorkoutViewModel = SetWorkoutViewModel.fixture(title: title)
+        XCTAssertEqual(setWorkoutViewModel.title, "TitleShorterThan25\n")
+        let oldValue = "TitleShorterThan25"
+        // When called manage setting title
+        setWorkoutViewModel.manageSettingTitle(withOldValue: oldValue)
+        // Then nothing happens
+        XCTAssertEqual(setWorkoutViewModel.title, "TitleShorterThan25\n")
+    }
+
 
 }

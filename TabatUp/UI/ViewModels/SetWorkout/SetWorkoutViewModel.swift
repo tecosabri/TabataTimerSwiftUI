@@ -61,6 +61,8 @@ final class SetWorkoutViewModel: ObservableObject {
         return true
     }
     
+    /// Prevents title from being longer than 25 characters and having a trailing new line.
+    /// - Parameter oldValue: The old value of the title variable.
     func manageSettingTitle(withOldValue oldValue: String) {
         if title.last == "\n" { return }
         if title.count > 25 { title = oldValue }
