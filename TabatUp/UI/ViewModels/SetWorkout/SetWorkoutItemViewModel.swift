@@ -50,8 +50,11 @@ final class SetWorkoutItemViewModel: ObservableObject {
     }
     
     // MARK: - Setting functions
-    /// Assigns the item value to its option property in the set workout view model.
+    /// Assigns the item value to its option property in the set workout view model, keeping values in range 0-3599 or 0-100 depending on option.
     func updateSetWorkoutViewModel() {
+    
+        checkValueRange()
+        
         switch option {
         case .title:
             setWorkoutViewModel.title = itemValue
@@ -67,6 +70,19 @@ final class SetWorkoutItemViewModel: ObservableObject {
             setWorkoutViewModel.restBetweenSets = itemValue
         case .sets:
             setWorkoutViewModel.sets = itemValue
+        }
+    }
+    
+    /// Keeps values in range 0-3599 or 0-100 depending on option indicating time or rounds.
+    func checkValueRange() {
+        guard let intValue = Int(itemValue) else { return }
+        switch option {
+        case .title:
+            return
+        case .prepareTime, .workTime, .restBetweenSets, .restBetweenCycles:
+            if intValue > 3599 { itemValue = "3599"}
+        case .sets, .cycles:
+            if intValue > 99 { itemValue = "99"}
         }
     }
     

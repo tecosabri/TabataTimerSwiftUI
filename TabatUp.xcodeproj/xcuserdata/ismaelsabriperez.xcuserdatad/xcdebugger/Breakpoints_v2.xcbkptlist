@@ -3,4 +3,68 @@
    uuid = "E5013939-E7AF-42BC-8D08-BB2D8582FEBA"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A12D0F25-D513-4410-B5B8-78A93ED60D61"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TabatUpTests/UI Tests/SetWorkoutViewModelTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "test_getCurrentlyModifiedItem_whenCalledWhenAnItemHasBeenModified_returnsItem()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A12D0F25-D513-4410-B5B8-78A93ED60D61 - 6bf04d5072a54191"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TabatUpTests.SetWorkoutViewModelTests.test_getCurrentlyModifiedItem_whenCalledWhenAnItemHasBeenModified_returnsItem() -&gt; ()"
+                  moduleName = "TabatUpTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ismaelsabriperez/Desktop/TabatUp/TabatUpTests/UI%20Tests/SetWorkoutViewModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "A12D0F25-D513-4410-B5B8-78A93ED60D61 - 6bf04d5072a54191"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TabatUpTests.SetWorkoutViewModelTests.test_getCurrentlyModifiedItem_whenCalledWhenAnItemHasBeenModified_returnsItem() -&gt; ()"
+                  moduleName = "TabatUpTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ismaelsabriperez/Desktop/TabatUp/TabatUpTests/UI%20Tests/SetWorkoutViewModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "296">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6B24657D-62A8-49E6-B7CF-948D642CD81B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TabatUp/UI/ViewModels/SetWorkout/SetWorkoutViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
