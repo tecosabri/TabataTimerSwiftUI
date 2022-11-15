@@ -5,7 +5,7 @@
 //  Created by Ismael Sabri Pérez on 28/10/22.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 
 
@@ -66,5 +66,17 @@ final class SetWorkoutViewModel: ObservableObject {
     func manageSettingTitle(withOldValue oldValue: String) {
         if title.last == "\n" { return }
         if title.count > 25 { title = oldValue }
+    }
+    
+    
+    /// When title edited, if it ends in a new line, hides the alphanumeric and numpad keyboard to clear the screen.
+    /// - Parameter newValue: The title new edited value.
+    func onTitleEdited(withNewValue newValue: String) {
+        guard let lastChar = newValue.last else { return }
+        if lastChar == "\n" {
+            title.removeLast()
+            currentlyModifiedItem?.isTapped = false
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }
     }
 }

@@ -123,6 +123,31 @@ final class SetWorkoutViewModelTests: XCTestCase {
         // Then nothing happens
         XCTAssertEqual(setWorkoutViewModel.title, "TitleShorterThan25\n")
     }
+    
+    // MARK: onTitleEdited(withNewValue newValue:
+    func test_onTitleEditedWithNewValue_whenEditedWithLastCharOtherThanNewLine_nothingHappens() {
+        // Given a set workout view model with title "default"
+        let setWorkoutViewModel = SetWorkoutViewModel.fixture(title: "default")
+        XCTAssertEqual(setWorkoutViewModel.title, "default")
+        setWorkoutViewModel.items[.workTime]?.itemValue = "33"
+        XCTAssertEqual(setWorkoutViewModel.workTime, "33")
+        setWorkoutViewModel.currentlyModifiedItem?.onTappedOnce()
+        // When calling on function after adding a t
+        setWorkoutViewModel.onTitleEdited(withNewValue: "defaultt")
+        // Then the currently modified item is still tapped because nothing happened
+        XCTAssertEqual(setWorkoutViewModel.currentlyModifiedItem?.isTapped, true)
+    }
 
-
+    func test_onTitleEditedWithNewValue_whenEditedWithLastCharIsNewLine_currentlyModifiedItemGetsUntapped() {
+        // Given a set workout view model with title "default"
+        let setWorkoutViewModel = SetWorkoutViewModel.fixture(title: "default")
+        XCTAssertEqual(setWorkoutViewModel.title, "default")
+        setWorkoutViewModel.items[.workTime]?.itemValue = "33"
+        XCTAssertEqual(setWorkoutViewModel.workTime, "33")
+        setWorkoutViewModel.currentlyModifiedItem?.onTappedOnce()
+        // When calling on function after adding a t
+        setWorkoutViewModel.onTitleEdited(withNewValue: "default\n")
+        // Then the currently modified item is still tapped because nothing happened
+        XCTAssertEqual(setWorkoutViewModel.currentlyModifiedItem?.isTapped, false)
+    }
 }

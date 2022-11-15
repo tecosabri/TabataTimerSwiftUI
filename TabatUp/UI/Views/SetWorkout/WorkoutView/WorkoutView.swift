@@ -33,12 +33,7 @@ struct WorkoutView: View {
                     .multilineTextAlignment(.center)
                     .disableAutocorrection(true)
                     .onChange(of: setWorkoutViewModel.title) { newValue in
-                        guard let lastChar = newValue.last else { return }
-                        if lastChar == "\n" {
-                            setWorkoutViewModel.title.removeLast()
-                            setWorkoutViewModel.currentlyModifiedItem?.isTapped = false
-                            hideKeyboard()
-                        }
+                        setWorkoutViewModel.onTitleEdited(withNewValue: newValue)
                     }
                     .focused($focusTextField, equals: .title)
                 
