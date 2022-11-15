@@ -158,6 +158,7 @@ final class SetWorkoutItemViewModel: ObservableObject {
     func onTappedOnce() {
         isTapped = true
         setWorkoutViewModel.currentlyModifiedItem = self
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil) // Hide keyboard when tap once
     }
 }
 

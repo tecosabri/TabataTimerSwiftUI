@@ -7,21 +7,25 @@
 
 import SwiftUI
 
+enum FocusText {
+    case title, defaultValue
+}
+
 struct WorkoutView: View {
     
     @ObservedObject var setWorkoutViewModel: SetWorkoutViewModel
     @State private var showView = false
-    
+    @FocusState private var focusTextField: FocusText?    
     var body: some View {
         VStack {
-            if !setWorkoutViewModel.currentlyModifiedItemIsTapped() {
+            if !setWorkoutViewModel.currentlyModifiedItemIsTapped() && focusTextField == Optional.none {
                 Text("Customize your workout!")
                     .bold()
                     .font(.title)
             }
             ZStack (alignment: .center){
                 // Set the title on the center
-                TextField("Workout title", text: $setWorkoutViewModel.title, axis: .vertical)
+                TextField("Tabata title", text: $setWorkoutViewModel.title, axis: .vertical)
                     .lineLimit(3)
                     .frame(width: UIScreen.screenWidth / 2 * 0.7)
                     .bold()
@@ -32,11 +36,12 @@ struct WorkoutView: View {
                         guard let lastChar = newValue.last else { return }
                         if lastChar == "\n" {
                             setWorkoutViewModel.title.removeLast()
+                            setWorkoutViewModel.currentlyModifiedItem?.isTapped = false
                             hideKeyboard()
                         }
                     }
-                    
-
+                    .focused($focusTextField, equals: .title)
+                
                 // Set a circular layout around the title
                 CircularLayoutView(setWorkoutViewModel: setWorkoutViewModel) {
                     // Prepare time. Force unwrap as items are already set
@@ -68,7 +73,7 @@ struct WorkoutView: View {
                     }
                 }
             }
-            if(setWorkoutViewModel.currentlyModifiedItemIsTapped()) {
+            if setWorkoutViewModel.currentlyModifiedItemIsTapped() && focusTextField == Optional.none {
                 NumPadView(setWorkoutItem: setWorkoutViewModel.currentlyModifiedItem!, numPadViewModel: NumPadViewModel(setWorkoutOption: setWorkoutViewModel.currentlyModifiedItem!.option)) // ! as currentlyModifiedItemIsTapped checks null
                     .frame(width: UIScreen.screenWidth)
                     .padding(.bottom, 40)
