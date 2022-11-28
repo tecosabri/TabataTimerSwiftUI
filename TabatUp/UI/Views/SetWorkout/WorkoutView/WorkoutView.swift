@@ -33,6 +33,7 @@ struct WorkoutView: View {
                     .multilineTextAlignment(.center)
                     .disableAutocorrection(true)
                     .onChange(of: setWorkoutViewModel.title) { newValue in
+                        // When newline, clears screen and commits new value
                         setWorkoutViewModel.onTitleEdited(withNewValue: newValue)
                     }
                     .focused($focusTextField, equals: .title)
