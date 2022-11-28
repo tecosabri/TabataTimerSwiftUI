@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87128CF8291CFE8B004845EF /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87128CF7291CFE8B004845EF /* CustomButton.swift */; };
+		87128CFA291CFED9004845EF /* NumPadSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87128CF9291CFED9004845EF /* NumPadSymbol.swift */; };
+		87128CFC291D0B25004845EF /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87128CFB291D0B25004845EF /* Number.swift */; };
+		87128CFF291D0C06004845EF /* NumPadViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87128CFE291D0C06004845EF /* NumPadViewModelTests.swift */; };
+		87128D01291D7D61004845EF /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87128D00291D7D61004845EF /* ViewExtension.swift */; };
+		873C0205291C219E008E3FAB /* NumPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C0204291C219E008E3FAB /* NumPadView.swift */; };
+		873C0207291C21AC008E3FAB /* NumButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C0206291C21AC008E3FAB /* NumButtonView.swift */; };
+		873C020A291C23B9008E3FAB /* NumPadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C0209291C23B9008E3FAB /* NumPadViewModel.swift */; };
+		873C020C291C5B18008E3FAB /* SetWorkoutViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C020B291C5B18008E3FAB /* SetWorkoutViewModelTests.swift */; };
 		8742F06C290BB91B00EA5BF4 /* SetWorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742F06B290BB91B00EA5BF4 /* SetWorkoutModel.swift */; };
 		8742F07D290BC88B00EA5BF4 /* SetWorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742F07C290BC88B00EA5BF4 /* SetWorkoutViewModel.swift */; };
 		8742F084290BD27900EA5BF4 /* SetWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878D32F2290BB1800073D5A7 /* SetWorkoutView.swift */; };
@@ -44,6 +53,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		87128CF7291CFE8B004845EF /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		87128CF9291CFED9004845EF /* NumPadSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumPadSymbol.swift; sourceTree = "<group>"; };
+		87128CFB291D0B25004845EF /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
+		87128CFE291D0C06004845EF /* NumPadViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumPadViewModelTests.swift; sourceTree = "<group>"; };
+		87128D00291D7D61004845EF /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		873C0204291C219E008E3FAB /* NumPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumPadView.swift; sourceTree = "<group>"; };
+		873C0206291C21AC008E3FAB /* NumButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumButtonView.swift; sourceTree = "<group>"; };
+		873C0209291C23B9008E3FAB /* NumPadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumPadViewModel.swift; sourceTree = "<group>"; };
+		873C020B291C5B18008E3FAB /* SetWorkoutViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutViewModelTests.swift; sourceTree = "<group>"; };
 		8742F06B290BB91B00EA5BF4 /* SetWorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutModel.swift; sourceTree = "<group>"; };
 		8742F07C290BC88B00EA5BF4 /* SetWorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutViewModel.swift; sourceTree = "<group>"; };
 		8742F089290BD41E00EA5BF4 /* SetWorkoutItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutItemView.swift; sourceTree = "<group>"; };
@@ -90,6 +108,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		87128CFD291D0B2B004845EF /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				8742F08B290BD6B400EA5BF4 /* SetWorkoutOption.swift */,
+				87128CF9291CFED9004845EF /* NumPadSymbol.swift */,
+				87128CFB291D0B25004845EF /* Number.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		873C0203291C212F008E3FAB /* NumpadView */ = {
+			isa = PBXGroup;
+			children = (
+				873C0204291C219E008E3FAB /* NumPadView.swift */,
+				873C0206291C21AC008E3FAB /* NumButtonView.swift */,
+				87128CF7291CFE8B004845EF /* CustomButton.swift */,
+			);
+			path = NumpadView;
+			sourceTree = "<group>";
+		};
+		873C0208291C229E008E3FAB /* SetWorkout */ = {
+			isa = PBXGroup;
+			children = (
+				8742F07C290BC88B00EA5BF4 /* SetWorkoutViewModel.swift */,
+				8742F091290BD9AA00EA5BF4 /* SetWorkoutItemViewModel.swift */,
+				873C0209291C23B9008E3FAB /* NumPadViewModel.swift */,
+			);
+			path = SetWorkout;
+			sourceTree = "<group>";
+		};
 		8742F080290BD1E900EA5BF4 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +183,7 @@
 		8742F095290BE54200EA5BF4 /* WorkoutView */ = {
 			isa = PBXGroup;
 			children = (
+				873C0203291C212F008E3FAB /* NumpadView */,
 				8742F089290BD41E00EA5BF4 /* SetWorkoutItemView.swift */,
 				8742F093290BE53F00EA5BF4 /* WorkoutView.swift */,
 				874DE29229103C4100940912 /* CircularLayoutView.swift */,
@@ -213,6 +262,7 @@
 			children = (
 				874DE29429103EC400940912 /* UIScreenExtension.swift */,
 				87F2C8C229128C2100FC0CFB /* StringExtension.swift */,
+				87128D00291D7D61004845EF /* ViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -220,10 +270,10 @@
 		876EAA692906FBD2006B567B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				87128CFD291D0B2B004845EF /* Enums */,
 				8742F08D290BD82300EA5BF4 /* PreviewModels */,
 				876E1FA2290A7DA500041F19 /* Status.swift */,
 				8742F06B290BB91B00EA5BF4 /* SetWorkoutModel.swift */,
-				8742F08B290BD6B400EA5BF4 /* SetWorkoutOption.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -239,8 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				876E1FA0290A7D2900041F19 /* RootViewModel.swift */,
-				8742F07C290BC88B00EA5BF4 /* SetWorkoutViewModel.swift */,
-				8742F091290BD9AA00EA5BF4 /* SetWorkoutItemViewModel.swift */,
+				873C0208291C229E008E3FAB /* SetWorkout */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -268,8 +317,10 @@
 			isa = PBXGroup;
 			children = (
 				87AB151D2912E29600721ABF /* SetWorkoutViewModelFixture.swift */,
+				873C020B291C5B18008E3FAB /* SetWorkoutViewModelTests.swift */,
 				87AB151F2912E2A900721ABF /* SetWorkoutItemViewModelFixture.swift */,
 				87AB15212912E38A00721ABF /* SetWorkoutItemViewModelTests.swift */,
+				87128CFE291D0C06004845EF /* NumPadViewModelTests.swift */,
 			);
 			path = TabatUpTests;
 			sourceTree = "<group>";
@@ -374,14 +425,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87128CFA291CFED9004845EF /* NumPadSymbol.swift in Sources */,
 				8742F08A290BD41E00EA5BF4 /* SetWorkoutItemView.swift in Sources */,
 				874DE29529103EC400940912 /* UIScreenExtension.swift in Sources */,
 				876EAA362906B88D006B567B /* TabatUpApp.swift in Sources */,
+				873C0205291C219E008E3FAB /* NumPadView.swift in Sources */,
+				87128CFC291D0B25004845EF /* Number.swift in Sources */,
 				8742F094290BE53F00EA5BF4 /* WorkoutView.swift in Sources */,
+				873C020A291C23B9008E3FAB /* NumPadViewModel.swift in Sources */,
 				8742F06C290BB91B00EA5BF4 /* SetWorkoutModel.swift in Sources */,
 				874DE29329103C4100940912 /* CircularLayoutView.swift in Sources */,
 				8742F092290BD9AA00EA5BF4 /* SetWorkoutItemViewModel.swift in Sources */,
 				878D32F5290BB18E0073D5A7 /* LoadWorkoutView.swift in Sources */,
+				87128D01291D7D61004845EF /* ViewExtension.swift in Sources */,
 				876E1FA3290A7DA500041F19 /* Status.swift in Sources */,
 				8742F08F290BD84200EA5BF4 /* PreviewWorkoutModels.swift in Sources */,
 				8742F08C290BD6B400EA5BF4 /* SetWorkoutOption.swift in Sources */,
@@ -389,8 +445,10 @@
 				876EAA6F2906FF31006B567B /* HomeView.swift in Sources */,
 				876E1FA1290A7D2900041F19 /* RootViewModel.swift in Sources */,
 				878D32F7290BB1970073D5A7 /* TimerView.swift in Sources */,
+				87128CF8291CFE8B004845EF /* CustomButton.swift in Sources */,
 				876E1F9F290A7D0E00041F19 /* RootView.swift in Sources */,
 				87F2C8C329128C2100FC0CFB /* StringExtension.swift in Sources */,
+				873C0207291C21AC008E3FAB /* NumButtonView.swift in Sources */,
 				8742F07D290BC88B00EA5BF4 /* SetWorkoutViewModel.swift in Sources */,
 				8742F084290BD27900EA5BF4 /* SetWorkoutView.swift in Sources */,
 			);
@@ -401,8 +459,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				87AB151E2912E29600721ABF /* SetWorkoutViewModelFixture.swift in Sources */,
+				87128CFF291D0C06004845EF /* NumPadViewModelTests.swift in Sources */,
 				87AB15222912E38A00721ABF /* SetWorkoutItemViewModelTests.swift in Sources */,
 				87AB15202912E2A900721ABF /* SetWorkoutItemViewModelFixture.swift in Sources */,
+				873C020C291C5B18008E3FAB /* SetWorkoutViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

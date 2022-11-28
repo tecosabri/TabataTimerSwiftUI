@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct FadeOutVStack <Content: View>: View {
     var content: Content
@@ -16,7 +17,7 @@ struct FadeOutVStack <Content: View>: View {
         VStack{
             content
                 .opacity(showView ? 1 : 0)
-                .onChange(of: setWorkoutViewModel.currentlyModifiedItem) { _ in
+                .onReceive(setWorkoutViewModel.$currentlyModifiedItem) { _ in
                     self.showView = true
                 }
                 .onChange(of: showView) { _ in

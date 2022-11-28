@@ -69,6 +69,30 @@ final class SetWorkoutItemViewModelTests: XCTestCase {
         XCTAssertEqual(sutSets.setWorkoutViewModel.sets, "2")
         XCTAssertEqual(sutRestBetweenSets.setWorkoutViewModel.restBetweenSets, "2")
     }
+    
+    func test_updateSetWorkoutViewModel_whenUpdatedTimeLongerThan3599_valueGets3599() {
+        // Given a workout item view model with option prepare time and value 10
+        let randomWorkout = SetWorkoutViewModel.fixture(prepareTime: 10)
+        let sut = SetWorkoutItemViewModel(workoutOption: .prepareTime, fromSetWorkoutViewModel: randomWorkout)
+        XCTAssertEqual(randomWorkout.prepareTime, sut.itemValue)
+        // When changed the item value to 6000 (greater than 3599) and updated the view model
+        sut.itemValue = "6000"
+        sut.updateSetWorkoutViewModel()
+        // Then the view model prepare time has to be 20 seconds
+        XCTAssertEqual(sut.setWorkoutViewModel.prepareTime, "3599")
+    }
+    
+    func test_updateSetWorkoutViewModel_whenUpdatedRoundsGreaterThan99_valueGets99() {
+        // Given a workout item view model with option sets and value 10
+        let randomWorkout = SetWorkoutViewModel.fixture(sets: 10)
+        let sut = SetWorkoutItemViewModel(workoutOption: .sets, fromSetWorkoutViewModel: randomWorkout)
+        XCTAssertEqual(randomWorkout.prepareTime, sut.itemValue)
+        // When changed the item value to 100 (greater than 99) and updated the view model
+        sut.itemValue = "100"
+        sut.updateSetWorkoutViewModel()
+        // Then the view model prepare time has to be 20 seconds
+        XCTAssertEqual(sut.setWorkoutViewModel.sets, "99")
+    }
 
     // MARK: - onDraggedWith(offSet: CGFloat)
     func test_onDraggedWithOffSet_whenDraggedUpTitleSetsOrCyclesItems_valueRemainsTheSame() {

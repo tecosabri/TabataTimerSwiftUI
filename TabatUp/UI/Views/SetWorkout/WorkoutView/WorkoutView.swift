@@ -7,21 +7,37 @@
 
 import SwiftUI
 
+enum FocusText {
+    case title, defaultValue
+}
+
 struct WorkoutView: View {
     
     @ObservedObject var setWorkoutViewModel: SetWorkoutViewModel
     @State private var showView = false
-    
+    @FocusState private var focusTextField: FocusText?    
     var body: some View {
         VStack {
-            Text("Customize your workout!")
-                .bold()
-                .font(.title)
-            ZStack {
+            if !setWorkoutViewModel.currentlyModifiedItemIsTapped() && focusTextField == Optional.none {
+                Text("Customize your workout!")
+                    .bold()
+                    .font(.title)
+            }
+            ZStack (alignment: .center){
                 // Set the title on the center
-                Text(setWorkoutViewModel.title)
+                TextField("Tabata title", text: $setWorkoutViewModel.title, axis: .vertical)
+                    .lineLimit(3)
+                    .frame(width: UIScreen.screenWidth / 2 * 0.7)
                     .bold()
                     .font(.title2)
+                    .multilineTextAlignment(.center)
+                    .disableAutocorrection(true)
+                    .onChange(of: setWorkoutViewModel.title) { newValue in
+                        // When newline, clears screen and commits new value
+                        setWorkoutViewModel.onTitleEdited(withNewValue: newValue)
+                    }
+                    .focused($focusTextField, equals: .title)
+                
                 // Set a circular layout around the title
                 CircularLayoutView(setWorkoutViewModel: setWorkoutViewModel) {
                     // Prepare time. Force unwrap as items are already set
@@ -44,14 +60,19 @@ struct WorkoutView: View {
                     
                     // Currently modified value appears when any of the items is modified
                     FadeOutVStack(setWorkoutViewModel: setWorkoutViewModel) {
-                        Text(setWorkoutViewModel.currentlyModifiedItem?.first?.key.rawValue ?? "")
+                        Text(setWorkoutViewModel.currentlyModifiedItem?.option.rawValue ?? "")
                             .bold()
                             .font(.caption)
-                        Text(setWorkoutViewModel.currentlyModifiedItem?.values.first ?? "")
+                        Text(setWorkoutViewModel.currentlyModifiedItem?.itemValue ?? "")
                             .bold()
                             .font(.title)
                     }
                 }
+            }
+            if setWorkoutViewModel.currentlyModifiedItemIsTapped() && focusTextField == Optional.none {
+                NumPadView(setWorkoutItem: setWorkoutViewModel.currentlyModifiedItem!, numPadViewModel: NumPadViewModel(setWorkoutOption: setWorkoutViewModel.currentlyModifiedItem!.option)) // ! as currentlyModifiedItemIsTapped checks null
+                    .frame(width: UIScreen.screenWidth)
+                    .padding(.bottom, 40)
             }
         }
     }
