@@ -39,6 +39,7 @@
 		87AB151E2912E29600721ABF /* SetWorkoutViewModelFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AB151D2912E29600721ABF /* SetWorkoutViewModelFixture.swift */; };
 		87AB15202912E2A900721ABF /* SetWorkoutItemViewModelFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AB151F2912E2A900721ABF /* SetWorkoutItemViewModelFixture.swift */; };
 		87AB15222912E38A00721ABF /* SetWorkoutItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AB15212912E38A00721ABF /* SetWorkoutItemViewModelTests.swift */; };
+		87C405072A2E47400040D8F8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C405062A2E47400040D8F8 /* Constants.swift */; };
 		87F2C8C329128C2100FC0CFB /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2C8C229128C2100FC0CFB /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		87AB151D2912E29600721ABF /* SetWorkoutViewModelFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutViewModelFixture.swift; sourceTree = "<group>"; };
 		87AB151F2912E2A900721ABF /* SetWorkoutItemViewModelFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutItemViewModelFixture.swift; sourceTree = "<group>"; };
 		87AB15212912E38A00721ABF /* SetWorkoutItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutItemViewModelTests.swift; sourceTree = "<group>"; };
+		87C405062A2E47400040D8F8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		87F2C8C229128C2100FC0CFB /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,6 +214,7 @@
 		876EAA342906B88D006B567B /* TabatUp */ = {
 			isa = PBXGroup;
 			children = (
+				87C405052A2E47370040D8F8 /* Utils */,
 				876EAA652906FBAB006B567B /* App */,
 				876EAA642906FB95006B567B /* Domain */,
 				876EAA662906FBB2006B567B /* UI */,
@@ -323,6 +326,14 @@
 				87128CFE291D0C06004845EF /* NumPadViewModelTests.swift */,
 			);
 			path = TabatUpTests;
+			sourceTree = "<group>";
+		};
+		87C405052A2E47370040D8F8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				87C405062A2E47400040D8F8 /* Constants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,6 +462,7 @@
 				873C0207291C21AC008E3FAB /* NumButtonView.swift in Sources */,
 				8742F07D290BC88B00EA5BF4 /* SetWorkoutViewModel.swift in Sources */,
 				8742F084290BD27900EA5BF4 /* SetWorkoutView.swift in Sources */,
+				87C405072A2E47400040D8F8 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

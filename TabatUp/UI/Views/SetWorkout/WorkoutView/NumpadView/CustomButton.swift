@@ -8,29 +8,37 @@ import SwiftUI
 
 struct CustomButton: View {
     
-    let size: CGFloat = 50
+    let size: CGFloat = Constants.buttonSize
     var numpadSymbol: NumPadSymbol
     
     var body: some View {
         switch numpadSymbol {
         case .deleteArrow:
+        ZStack {
+            Circle()
+                .fill(Color.red)
+                .frame(width: size, height: size)
+
             Image(systemName: "delete.left")
-                .font(.title)
-                .overlay(
-                    Rectangle()
-                        .stroke()
-                        .frame(width: size, height: size)
-                )
-                .frame(width: size, height: size)
+                .resizable()
+                .scaledToFit()
+                .frame(width: size / 2, height: size / 2)
+                .foregroundColor(Color.white)
+        }
+
+            
         case .done:
-            Image(systemName: "checkmark.seal")
-                .font(.title)
-                .overlay(
-                    Rectangle()
-                        .stroke()
-                        .frame(width: size, height: size)
-                )
-                .frame(width: size, height: size)
+            ZStack {
+                Circle()
+                    .fill(Color.green)
+                    .frame(width: size, height: size)
+
+                Image(systemName: "checkmark.seal")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: size / 2, height: size / 2)
+                    .foregroundColor(Color.white)
+            }
         }
 
     }

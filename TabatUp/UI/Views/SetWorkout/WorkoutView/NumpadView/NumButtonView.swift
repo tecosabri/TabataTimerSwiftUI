@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NumButtonView: View {
     
-    let size: CGFloat = 50
+    let size: CGFloat = Constants.buttonSize
     var number: Number
     
     var body: some View {
@@ -17,7 +17,7 @@ struct NumButtonView: View {
             .bold()
             .font(.title)
             .overlay(
-                Rectangle()
+                Circle()
                     .stroke()
                     .frame(width: size, height: size)
             )

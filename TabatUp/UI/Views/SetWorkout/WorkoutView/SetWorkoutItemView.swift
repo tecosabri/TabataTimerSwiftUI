@@ -45,9 +45,7 @@ struct SetWorkoutItemView: View {
             setWorkoutItem.onTappedTwice()
         }
         .onTapGesture { // Must be after onTapGesture(count: 2)
-            withAnimation { // Smooth opening of the keyboard
-                setWorkoutItem.onTappedOnce()
-            }
+            setWorkoutItem.onTappedOnce()
         }
     }
 }

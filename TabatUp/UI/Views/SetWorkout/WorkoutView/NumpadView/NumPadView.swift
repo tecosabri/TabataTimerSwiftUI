@@ -41,9 +41,7 @@ struct NumPadView: View {
                 NumButtonView(number: .eight).onTapGesture { numPadViewModel.add(number: .eight) }
                 NumButtonView(number: .nine).onTapGesture { numPadViewModel.add(number: .nine) }
                 CustomButton(numpadSymbol: .done).onTapGesture {
-                    withAnimation { // Smooth disappearing of keyboard
-                        numPadViewModel.onDone(updateItem: setWorkoutItem)
-                    }
+                    numPadViewModel.onDone(updateItem: setWorkoutItem)
                 }
             }
         }
